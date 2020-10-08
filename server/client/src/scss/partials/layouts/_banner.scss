@@ -1,0 +1,57 @@
+.bannerContainer {
+    position: relative;
+    color: white;
+    height: 31rem;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.bannerOverlay {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.bannerInfoWrap {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 1rem;
+    @media screen and (min-width: $md_breakpoint) {
+        left: 4rem;
+    }
+    @media screen and (min-width: $lg_breakpoint) {
+        left: 8rem;
+    }
+
+    .bannerSubTitle {
+        margin: 0;
+        text-transform: uppercase;
+        font-weight: 200;
+        font-size: 1.5rem;
+        margin-bottom: 1.7rem;
+        letter-spacing: 0.04rem;
+        @media screen and (min-width: $md_breakpoint) {
+            font-size: 2rem;
+        }
+    }
+    .bannerTitle {
+        margin: 0;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 3rem;
+        max-width: 50rem;
+        letter-spacing: 0.04rem;
+        @media screen and (min-width: $md_breakpoint) {
+            font-size: 4rem;
+            max-width: 50rem;
+        }
+    }
+}
