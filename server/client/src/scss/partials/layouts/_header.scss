@@ -1,0 +1,9 @@
+nav {
+    padding: 0.5rem 2rem;
+    .logo {
+        width: 17rem;
+        @media screen and (min-width: $md_breakpoint) {
+            width: 20rem;
+        }
+    }
+}
