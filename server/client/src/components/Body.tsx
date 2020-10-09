@@ -1,6 +1,8 @@
 import React from "react";
 import Banner from "./Banner";
 import trollsMovie from "../img/trollsMovie.jpg";
+import theCroodsMovie from "../img/theCroodsMovie.jpg";
+import abominableMovie from "../img/abominableMovie.jpg";
 import {
     CarouselProvider,
     Slider,
@@ -9,6 +11,10 @@ import {
     ButtonNext,
 } from "pure-react-carousel";
 import "pure-react-carousel/dist/react-carousel.es.css";
+
+import { RiArrowRightSLine, RiArrowLeftSLine } from "react-icons/ri";
+import { IconContext } from "react-icons";
+
 const Body: React.FC<{}> = () => {
     return (
         <React.Fragment>
@@ -17,24 +23,35 @@ const Body: React.FC<{}> = () => {
 
             <CarouselProvider
                 naturalSlideWidth={100}
-                naturalSlideHeight={50}
-                totalSlides={3}
+                naturalSlideHeight={155}
+                totalSlides={4}
                 className="moviesCarouselWrap"
+                visibleSlides={3}
+                infinite={true}
             >
                 <div className="sliderAndButtonWrap">
-                    <Slider>
+                    <Slider className="carouselSlide">
                         <Slide index={0}>
-                            <div className="carouselSlide">
-                                <img src={trollsMovie}></img>
-                                <img src={trollsMovie}></img>
+                            <div>
                                 <img src={trollsMovie}></img>
                             </div>
                         </Slide>
-                        <Slide index={1}>I am the second Slide.</Slide>
-                        <Slide index={2}>I am the third Slide.</Slide>
+                        <Slide index={1}>
+                            <img src={theCroodsMovie}></img>
+                        </Slide>
+                        <Slide index={2}>
+                            <img src={abominableMovie}></img>
+                        </Slide>
+                        <Slide index={3}>
+                            <img src={theCroodsMovie}></img>
+                        </Slide>
                     </Slider>
-                    <ButtonBack className="moviesBackButton">Back</ButtonBack>
-                    <ButtonNext className="moviesNextButton">Next</ButtonNext>
+                    <ButtonBack className="moviesBackButton">
+                        <RiArrowLeftSLine />
+                    </ButtonBack>
+                    <ButtonNext className="moviesNextButton">
+                        <RiArrowRightSLine />
+                    </ButtonNext>
                 </div>
             </CarouselProvider>
         </React.Fragment>
