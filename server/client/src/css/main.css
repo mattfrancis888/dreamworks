@@ -434,22 +434,9 @@ nav .logo {
   }
 }
 
-.bodyMoviesTitle {
-  text-transform: uppercase;
-  letter-spacing: 0.03rem;
-  color: #052c6f;
-  text-align: center;
-  margin-top: 4rem;
-  font-size: 3rem;
-}
-@media screen and (min-width: 768px) {
-  .bodyMoviesTitle {
-    font-size: 4rem;
-  }
-}
-
 .moviesCarouselWrap {
   padding: 0 3rem;
+  margin-bottom: 5rem;
 }
 @media screen and (min-width: 768px) {
   .moviesCarouselWrap {
@@ -461,15 +448,14 @@ nav .logo {
     padding: 0 7rem;
   }
 }
-
-.sliderAndButtonWrap {
-  position: relative;
-}
-
-.carouselSlide img {
+.moviesCarouselWrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.sliderAndButtonWrap {
+  position: relative;
 }
 
 .moviesNextButton {
@@ -531,6 +517,115 @@ nav .logo {
 @media screen and (min-width: 768px) {
   .moviesBackButton {
     left: -3rem;
+  }
+}
+
+.aboutCarousel {
+  background-color: #052c6f;
+  padding: 4rem 0;
+  overflow: hidden;
+}
+
+.aboutCarouselTitle {
+  color: white;
+  font-size: 4rem;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+}
+
+.aboutTitleAndDotsWrap {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.aboutCarouselDotsWrap {
+  display: flex;
+  justify-content: center;
+}
+
+.aboutCarouselDot {
+  background-color: #052c6f;
+  border: none;
+  padding: 0 2rem;
+  border-bottom: 3px solid #055ebb;
+}
+.aboutCarouselDot h3 {
+  color: white;
+}
+
+.aboutCarouselImageContainer {
+  position: relative;
+  width: 100%;
+  height: 20rem;
+}
+@media screen and (min-width: 768px) {
+  .aboutCarouselImageContainer {
+    height: 30rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .aboutCarouselImageContainer {
+    height: 40rem;
+  }
+}
+.aboutCarouselImageContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.aboutCarouselSlide {
+  margin: 0 auto;
+  text-align: center;
+  width: 45rem;
+  color: white;
+}
+@media screen and (min-width: 768px) {
+  .aboutCarouselSlide {
+    width: 60rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .aboutCarouselSlide {
+    width: 70rem;
+  }
+}
+
+.aboutCarouselOverlay {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.aboutCarouselOverlayText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-transform: uppercase;
+}
+
+.aboutCarouselDescription {
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  font-size: 1.6rem;
+  line-height: 2.3rem;
+}
+
+.bodyMoviesTitle {
+  text-transform: uppercase;
+  letter-spacing: 0.03rem;
+  color: #052c6f;
+  text-align: center;
+  margin-top: 4rem;
+  font-size: 3rem;
+}
+@media screen and (min-width: 768px) {
+  .bodyMoviesTitle {
+    font-size: 4rem;
   }
 }
 

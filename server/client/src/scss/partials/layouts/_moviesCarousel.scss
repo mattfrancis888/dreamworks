@@ -1,0 +1,40 @@
+.moviesCarouselWrap {
+    padding: 0 3rem;
+    margin-bottom: 5rem;
+    @media screen and (min-width: $md_breakpoint) {
+        padding: 0 5rem;
+    }
+    @media screen and (min-width: $xl_breakpoint) {
+        padding: 0 7rem;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+.sliderAndButtonWrap {
+    position: relative;
+}
+
+.moviesNextButton {
+    @include carouselNextAndPrevButton;
+    position: absolute;
+    right: -2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    @media screen and (min-width: $md_breakpoint) {
+        right: -3rem;
+    }
+}
+
+.moviesBackButton {
+    @include carouselNextAndPrevButton;
+    position: absolute;
+    left: -2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    @media screen and (min-width: $md_breakpoint) {
+        left: -3rem;
+    }
+}
