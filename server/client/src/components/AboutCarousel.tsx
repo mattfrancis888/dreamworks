@@ -19,7 +19,7 @@ const AboutCarousel: React.FC<{}> = () => {
     return (
         <CarouselProvider
             naturalSlideWidth={100}
-            naturalSlideHeight={40}
+            naturalSlideHeight={155}
             totalSlides={3}
             className="aboutCarousel"
             visibleSlides={1}

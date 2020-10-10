@@ -1,11 +1,26 @@
 .aboutCarousel {
     background-color: $purple;
     padding: 4rem 0;
+    max-height: 48rem;
     overflow: hidden;
+    @media screen and (min-width: $sm_breakpoint) {
+        max-height: 54rem;
+    }
+    @media screen and (min-width: $md_breakpoint) {
+        max-height: 64rem;
+    }
+    @media screen and (min-width: $lg_breakpoint) {
+        max-height: 74rem;
+    }
 }
+
 .aboutCarouselTitle {
     color: white;
-    font-size: 4rem;
+    font-size: 2.2rem;
+    @media screen and (min-width: $sm_breakpoint) {
+        font-size: 4rem;
+    }
+
     letter-spacing: 0.05rem;
     text-transform: uppercase;
 }
@@ -60,8 +75,11 @@
 .aboutCarouselSlide {
     margin: 0 auto;
     text-align: center;
-    width: 45rem;
+    width: 30rem;
     color: white;
+    @media screen and (min-width: $sm_breakpoint) {
+        width: 45rem;
+    }
     @media screen and (min-width: $md_breakpoint) {
         width: 60rem;
     }
@@ -85,6 +103,10 @@
 .aboutCarouselDescription {
     color: hsla(0, 0%, 100%, 0.8);
     text-align: center;
-    font-size: 1.6rem;
-    line-height: 2.3rem;
+    font-size: 1.2rem;
+
+    @media screen and (min-width: $sm_breakpoint) {
+        font-size: 1.6rem;
+        line-height: 2.3rem;
+    }
 }

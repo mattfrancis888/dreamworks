@@ -523,14 +523,35 @@ nav .logo {
 .aboutCarousel {
   background-color: #052c6f;
   padding: 4rem 0;
+  max-height: 48rem;
   overflow: hidden;
+}
+@media screen and (min-width: 520px) {
+  .aboutCarousel {
+    max-height: 54rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .aboutCarousel {
+    max-height: 64rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .aboutCarousel {
+    max-height: 74rem;
+  }
 }
 
 .aboutCarouselTitle {
   color: white;
-  font-size: 4rem;
+  font-size: 2.2rem;
   letter-spacing: 0.05rem;
   text-transform: uppercase;
+}
+@media screen and (min-width: 520px) {
+  .aboutCarouselTitle {
+    font-size: 4rem;
+  }
 }
 
 .aboutTitleAndDotsWrap {
@@ -589,8 +610,13 @@ nav .logo {
 .aboutCarouselSlide {
   margin: 0 auto;
   text-align: center;
-  width: 45rem;
+  width: 30rem;
   color: white;
+}
+@media screen and (min-width: 520px) {
+  .aboutCarouselSlide {
+    width: 45rem;
+  }
 }
 @media screen and (min-width: 768px) {
   .aboutCarouselSlide {
@@ -623,8 +649,13 @@ nav .logo {
 .aboutCarouselDescription {
   color: rgba(255, 255, 255, 0.8);
   text-align: center;
-  font-size: 1.6rem;
-  line-height: 2.3rem;
+  font-size: 1.2rem;
+}
+@media screen and (min-width: 520px) {
+  .aboutCarouselDescription {
+    font-size: 1.6rem;
+    line-height: 2.3rem;
+  }
 }
 
 .bodyMoviesTitle {
@@ -639,6 +670,70 @@ nav .logo {
   .bodyMoviesTitle {
     font-size: 4rem;
   }
+}
+
+.thankYouContainer {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+}
+
+.thankYouTextWrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 3rem;
+}
+@media screen and (min-width: 992px) {
+  .thankYouTextWrap {
+    width: 40%;
+  }
+}
+.thankYouTextWrap h1 {
+  text-align: center;
+  text-transform: uppercase;
+  color: #052c6f;
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+.thankYouTextWrap p {
+  text-align: center;
+  color: #052c6f;
+  font-size: 1.7rem;
+  margin: 0;
+}
+
+.thankYouImageWrap {
+  width: 100%;
+  padding: 0 0.5rem;
+}
+@media screen and (min-width: 520px) {
+  .thankYouImageWrap {
+    padding: 0 3rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .thankYouImageWrap {
+    padding: 0 13rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .thankYouImageWrap {
+    padding: 0 4rem;
+    width: 60%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .thankYouImageWrap {
+    padding: 0 13rem;
+    width: 60%;
+  }
+}
+.thankYouImageWrap img {
+  width: 100%;
+  object-fit: cover;
 }
 
 /*# sourceMappingURL=main.css.map */
