@@ -10,8 +10,12 @@ import {
     DotGroup,
     Dot,
 } from "pure-react-carousel";
-//const [dotIsClicked, setDotIsClicked] = useState(true);
+
 const AboutCarousel: React.FC<{}> = () => {
+    const [campusDotIsClicked, setCampusDotIsClicked] = useState(true);
+    const [moviesDotIsClicked, setMoviesDotIsClicked] = useState(false);
+    const [techDotIsClicked, setTechDotIsClicked] = useState(false);
+
     return (
         <CarouselProvider
             naturalSlideWidth={100}
@@ -23,13 +27,49 @@ const AboutCarousel: React.FC<{}> = () => {
             <div className="aboutTitleAndDotsWrap">
                 <h1 className="aboutCarouselTitle">About Dreamworks</h1>
                 <div className="aboutCarouselDotsWrap">
-                    <Dot className="aboutCarouselDot" slide={0}>
+                    <Dot
+                        className={
+                            campusDotIsClicked
+                                ? "aboutCarouselDotClicked"
+                                : "aboutCarouselDot"
+                        }
+                        slide={0}
+                        onClick={() => {
+                            setCampusDotIsClicked(true);
+                            setMoviesDotIsClicked(false);
+                            setTechDotIsClicked(false);
+                        }}
+                    >
                         <h3>Campus</h3>
                     </Dot>
-                    <Dot className="aboutCarouselDot" slide={1}>
+                    <Dot
+                        className={
+                            moviesDotIsClicked
+                                ? "aboutCarouselDotClicked"
+                                : "aboutCarouselDot"
+                        }
+                        slide={1}
+                        onClick={() => {
+                            setCampusDotIsClicked(false);
+                            setMoviesDotIsClicked(true);
+                            setTechDotIsClicked(false);
+                        }}
+                    >
                         <h3>Movies</h3>
                     </Dot>
-                    <Dot className="aboutCarouselDot" slide={2}>
+                    <Dot
+                        className={
+                            techDotIsClicked
+                                ? "aboutCarouselDotClicked"
+                                : "aboutCarouselDot"
+                        }
+                        slide={2}
+                        onClick={() => {
+                            setCampusDotIsClicked(false);
+                            setMoviesDotIsClicked(false);
+                            setTechDotIsClicked(true);
+                        }}
+                    >
                         <h3>Tech</h3>
                     </Dot>
                 </div>

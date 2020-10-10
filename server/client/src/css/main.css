@@ -548,9 +548,21 @@ nav .logo {
   border: none;
   padding: 0 2rem;
   border-bottom: 3px solid #055ebb;
+  outline: none !important;
+  box-shadow: none !important;
 }
 .aboutCarouselDot h3 {
   color: white;
+}
+
+.aboutCarouselDotClicked {
+  background-color: #052c6f;
+  border: none;
+  padding: 0 2rem;
+  border-bottom: 3px solid #4c8dff;
+}
+.aboutCarouselDotClicked h3 {
+  color: #4c8dff;
 }
 
 .aboutCarouselImageContainer {

@@ -24,11 +24,23 @@
     border: none;
     padding: 0 2rem;
     border-bottom: 3px solid $light-blue;
-
+    outline: none !important;
+    box-shadow: none !important;
     h3 {
         color: white;
     }
 }
+
+.aboutCarouselDotClicked {
+    background-color: $purple;
+    border: none;
+    padding: 0 2rem;
+    border-bottom: 3px solid $very-light-blue;
+    h3 {
+        color: $very-light-blue;
+    }
+}
+
 .aboutCarouselImageContainer {
     position: relative;
     width: 100%;
