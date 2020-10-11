@@ -1,0 +1,67 @@
+.bodyMoviesTitle {
+    text-transform: uppercase;
+    letter-spacing: 0.03rem;
+    color: $purple;
+    text-align: center;
+    margin-top: 4rem;
+    font-size: 3rem;
+    opacity: 0;
+    @media screen and (min-width: $md_breakpoint) {
+        font-size: 4rem;
+    }
+}
+
+.thankYouContainer {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem;
+}
+
+.thankYouTextWrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 3rem;
+    opacity: 0;
+    @media screen and (min-width: $lg_breakpoint) {
+        width: 40%;
+    }
+    h1 {
+        text-align: center;
+        text-transform: uppercase;
+        color: $purple;
+        margin: 0;
+        margin-bottom: 0.5rem;
+    }
+    p {
+        text-align: center;
+        color: $purple;
+        font-size: 1.7rem;
+        margin: 0;
+    }
+}
+.thankYouImageWrap {
+    width: 100%;
+    padding: 0 0.5rem;
+    @media screen and (min-width: $sm_breakpoint) {
+        padding: 0 3rem;
+    }
+    @media screen and (min-width: $md_breakpoint) {
+        padding: 0 13rem;
+    }
+    @media screen and (min-width: $lg_breakpoint) {
+        padding: 0 4rem;
+        width: 60%;
+    }
+    @media screen and (min-width: $xl_breakpoint) {
+        padding: 0 13rem;
+        width: 60%;
+    }
+
+    img {
+        width: 100%;
+        object-fit: cover;
+    }
+}
