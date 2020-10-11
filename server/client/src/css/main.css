@@ -743,4 +743,19 @@ nav .logo {
   object-fit: cover;
 }
 
+footer {
+  background-color: #052c6f;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+footer .footerLogo {
+  width: 16rem;
+}
+@media screen and (min-width: 992px) {
+  footer {
+    padding: 5rem;
+  }
+}
+
 /*# sourceMappingURL=main.css.map */

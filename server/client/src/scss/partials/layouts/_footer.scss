@@ -1,0 +1,12 @@
+footer {
+    background-color: $purple;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    .footerLogo {
+        width: 16rem;
+    }
+    @media screen and (min-width: $lg_breakpoint) {
+        padding: 5rem;
+    }
+}
