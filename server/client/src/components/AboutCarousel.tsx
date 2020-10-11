@@ -12,11 +12,35 @@ import {
 } from "pure-react-carousel";
 import LazyLoad from "react-lazyload";
 import anime from "animejs/lib/anime.es.js";
+import { useInView } from "react-intersection-observer";
 
 const AboutCarousel: React.FC<{}> = () => {
     const [campusDotIsClicked, setCampusDotIsClicked] = useState(true);
     const [moviesDotIsClicked, setMoviesDotIsClicked] = useState(false);
     const [techDotIsClicked, setTechDotIsClicked] = useState(false);
+
+    const { ref, inView, entry } = useInView({
+        /* Optional options */
+        threshold: 0,
+        triggerOnce: true,
+    });
+    useEffect(() => {
+        if (inView) {
+            anime({
+                targets: ".aboutCarouselTitle",
+                translateY: [50, 0],
+                duration: 700,
+                easing: "easeOutQuad",
+                opacity: [
+                    {
+                        value: [0, 1],
+                        duration: 2000,
+                        easing: "easeOutQuad",
+                    },
+                ],
+            });
+        }
+    }, [inView]);
 
     return (
         <CarouselProvider
@@ -27,7 +51,9 @@ const AboutCarousel: React.FC<{}> = () => {
             visibleSlides={1}
         >
             <div className="aboutTitleAndDotsWrap">
-                <h1 className="aboutCarouselTitle">About Dreamworks</h1>
+                <h1 className="aboutCarouselTitle" ref={ref}>
+                    About Dreamworks
+                </h1>
                 <div className="aboutCarouselDotsWrap">
                     <Dot
                         className={
