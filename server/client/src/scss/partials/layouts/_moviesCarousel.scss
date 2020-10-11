@@ -26,6 +26,7 @@
     @media screen and (min-width: $md_breakpoint) {
         right: -3rem;
     }
+    outline: none !important;
 }
 
 .moviesBackButton {
@@ -37,4 +38,5 @@
     @media screen and (min-width: $md_breakpoint) {
         left: -3rem;
     }
+    outline: none !important;
 }

@@ -5,6 +5,7 @@
     text-align: center;
     margin-top: 4rem;
     font-size: 3rem;
+    opacity: 0;
     @media screen and (min-width: $md_breakpoint) {
         font-size: 4rem;
     }
@@ -23,6 +24,7 @@
     align-items: center;
     width: 100%;
     margin-bottom: 3rem;
+    opacity: 0;
     @media screen and (min-width: $lg_breakpoint) {
         width: 40%;
     }

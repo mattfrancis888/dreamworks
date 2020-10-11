@@ -472,6 +472,7 @@ nav .logo {
   right: -2rem;
   top: 50%;
   transform: translateY(-50%);
+  outline: none !important;
 }
 @media screen and (min-width: 768px) {
   .moviesNextButton {
@@ -503,6 +504,7 @@ nav .logo {
   left: -2rem;
   top: 50%;
   transform: translateY(-50%);
+  outline: none !important;
 }
 @media screen and (min-width: 768px) {
   .moviesBackButton {
@@ -545,6 +547,7 @@ nav .logo {
 .aboutCarouselTitle {
   color: white;
   font-size: 2.2rem;
+  opacity: 0;
   letter-spacing: 0.05rem;
   text-transform: uppercase;
 }
@@ -639,6 +642,8 @@ nav .logo {
 }
 
 .aboutCarouselOverlayText {
+  color: white;
+  z-index: 1;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -665,6 +670,7 @@ nav .logo {
   text-align: center;
   margin-top: 4rem;
   font-size: 3rem;
+  opacity: 0;
 }
 @media screen and (min-width: 768px) {
   .bodyMoviesTitle {
@@ -685,6 +691,7 @@ nav .logo {
   align-items: center;
   width: 100%;
   margin-bottom: 3rem;
+  opacity: 0;
 }
 @media screen and (min-width: 992px) {
   .thankYouTextWrap {

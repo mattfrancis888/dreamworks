@@ -119,7 +119,7 @@ const AboutCarousel: React.FC<{}> = () => {
                                         anime({
                                             targets:
                                                 ".aboutCarouselImageContainer",
-                                            translateY: [10, 0],
+                                            translateY: [30, 0],
                                             duration: 300,
                                             easing: "linear",
                                             opacity: [
