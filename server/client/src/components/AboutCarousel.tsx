@@ -10,6 +10,8 @@ import {
     DotGroup,
     Dot,
 } from "pure-react-carousel";
+import LazyLoad from "react-lazyload";
+import anime from "animejs/lib/anime.es.js";
 
 const AboutCarousel: React.FC<{}> = () => {
     const [campusDotIsClicked, setCampusDotIsClicked] = useState(true);
@@ -78,13 +80,34 @@ const AboutCarousel: React.FC<{}> = () => {
             <Slider>
                 <Slide index={0}>
                     <div className="aboutCarouselSlide">
-                        <div className="aboutCarouselImageContainer">
-                            <div className="aboutCarouselOverlay"></div>
-                            <h1 className="aboutCarouselOverlayText">
-                                award-winning television
-                            </h1>
-                            <img src={trollsMovie}></img>
-                        </div>
+                        <LazyLoad>
+                            <div className="aboutCarouselImageContainer">
+                                <h1 className="aboutCarouselOverlayText">
+                                    award-winning television
+                                </h1>
+
+                                <div className="aboutCarouselOverlay"></div>
+                                <img
+                                    src={trollsMovie}
+                                    onLoad={() => {
+                                        anime({
+                                            targets:
+                                                ".aboutCarouselImageContainer",
+                                            translateY: [10, 0],
+                                            duration: 300,
+                                            easing: "linear",
+                                            opacity: [
+                                                {
+                                                    value: [0, 1],
+                                                    duration: 3000,
+                                                    easing: "easeOutQuad",
+                                                },
+                                            ],
+                                        });
+                                    }}
+                                ></img>
+                            </div>
+                        </LazyLoad>
                         <p className="aboutCarouselDescription">
                             In 2013, the DWA Television division was launched
                             into being with a groundbreaking deal for hundreds
