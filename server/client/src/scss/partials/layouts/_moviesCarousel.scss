@@ -45,6 +45,7 @@
     position: relative;
     opacity: 0;
 }
+
 .movieOverlay {
     position: absolute;
     top: 0;
@@ -70,9 +71,12 @@
         @media screen and (min-width: $lg_breakpoint) {
             font-size: 2rem;
         }
+        filter: none;
+        z-index: 1;
     }
     opacity: 0;
     transition: all 0.3s ease;
+
     &:hover {
         opacity: 1;
     }
