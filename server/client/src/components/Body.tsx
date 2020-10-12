@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useCallback } from "react";
+import React, { useEffect } from "react";
 import Banner from "./Banner";
 import MoviesCarousel from "./MoviesCarousel";
 import AboutCarousel from "./AboutCarousel";
