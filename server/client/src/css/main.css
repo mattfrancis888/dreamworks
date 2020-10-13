@@ -794,9 +794,13 @@ nav .logo {
   opacity: 0;
 }
 
+.movieInfoContainer {
+  background-color: #052c6f;
+}
+
 .movieInfoBanner {
   position: relative;
-  height: 30rem;
+  height: 60rem;
   overflow: hidden;
 }
 .movieInfoBanner .trollsBannerImg {
@@ -810,9 +814,14 @@ nav .logo {
   background-color: #052c6f;
   object-fit: cover;
 }
-@media screen and (min-width: 520px) {
+@media screen and (min-width: 768px) {
   .movieInfoBanner {
-    height: 40rem;
+    height: 65rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .movieInfoBanner {
+    height: 70rem;
   }
 }
 
@@ -850,6 +859,81 @@ nav .logo {
 .trollsMovieTitle img {
   width: 100%;
   height: 100%;
+}
+
+.movieInfoAbout {
+  padding-top: 7rem;
+  background-color: #052c6f;
+  color: white;
+}
+@media screen and (min-width: 520px) {
+  .movieInfoAbout {
+    padding-top: 9rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .movieInfoAbout {
+    display: flex;
+  }
+}
+
+.aboutMovieTitle {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+}
+@media screen and (min-width: 520px) {
+  .aboutMovieTitle {
+    margin-bottom: 5rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .aboutMovieTitle {
+    text-align: left;
+    margin: 0;
+  }
+}
+
+.movieInfoAboutTextWrap {
+  padding: 0 3rem;
+}
+@media screen and (min-width: 768px) {
+  .movieInfoAboutTextWrap {
+    width: 50%;
+    padding: 0 4rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .movieInfoAboutTextWrap {
+    padding: 0 8rem;
+  }
+}
+
+.movieInfoAboutImage {
+  position: relative;
+}
+.movieInfoAboutImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media screen and (min-width: 768px) {
+  .movieInfoAboutImage {
+    width: 50%;
+  }
+}
+
+.aboutMovieDesc {
+  padding: 1rem 5rem;
+  font-size: 1.4rem;
+  line-height: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .aboutMovieDesc {
+    padding: 0;
+    font-size: 1.5rem;
+    line-height: 2.3rem;
+  }
 }
 
 footer {
