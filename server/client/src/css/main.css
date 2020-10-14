@@ -355,10 +355,25 @@ html {
 
 body {
   /*Make default font-size bigger. If default font-size is 16px; 1.6 rem = 16 px*/
-  font: 1.1rem helvetica, arial, sans-serif;
+  font: 1.1rem "TT Norms", helvetica, arial, sans-serif;
 }
 
+@font-face {
+  font-family: "Bemio";
+  src: url(../fonts/Bemio.otf) format("opentype");
+}
+@font-face {
+  font-family: "TT Norms";
+  src: url(../fonts/TTNorms-Regular.otf) format("opentype");
+}
+@font-face {
+  font-family: "TT Norms Bold";
+  src: url(../fonts/TTNorms-Bold.otf) format("opentype");
+}
 nav {
+  z-index: 2;
+  width: 100%;
+  background-color: white;
   padding: 0.5rem 2rem;
 }
 nav .logo {
@@ -420,6 +435,7 @@ nav .logo {
   }
 }
 .bannerInfoWrap .bannerTitle {
+  font-family: "TT Norms Bold", helvetica, arial, sans-serif;
   margin: 0;
   text-transform: uppercase;
   font-weight: 700;
@@ -522,6 +538,52 @@ nav .logo {
   }
 }
 
+.movieContainerCarousel {
+  position: relative;
+  opacity: 0;
+}
+
+.movieOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.movieOverlay h3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  filter: none;
+  z-index: 1;
+}
+@media screen and (min-width: 520px) {
+  .movieOverlay h3 {
+    font-size: 1.3rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .movieOverlay h3 {
+    font-size: 1.6rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .movieOverlay h3 {
+    font-size: 2rem;
+  }
+}
+.movieOverlay:hover {
+  opacity: 1;
+}
+
 .aboutCarousel {
   background-color: #052c6f;
   padding: 4rem 0;
@@ -545,6 +607,7 @@ nav .logo {
 }
 
 .aboutCarouselTitle {
+  font-family: "TT Norms Bold";
   color: white;
   font-size: 2.2rem;
   opacity: 0;
@@ -593,6 +656,7 @@ nav .logo {
   position: relative;
   width: 100%;
   height: 20rem;
+  opacity: 0;
 }
 @media screen and (min-width: 768px) {
   .aboutCarouselImageContainer {
@@ -643,6 +707,7 @@ nav .logo {
 
 .aboutCarouselOverlayText {
   color: white;
+  font-family: "TT Norms Bold";
   z-index: 1;
   position: absolute;
   top: 50%;
@@ -664,6 +729,7 @@ nav .logo {
 }
 
 .bodyMoviesTitle {
+  font-family: "TT Norms Bold";
   text-transform: uppercase;
   letter-spacing: 0.03rem;
   color: #052c6f;
@@ -699,6 +765,7 @@ nav .logo {
   }
 }
 .thankYouTextWrap h1 {
+  font-family: "TT Norms Bold";
   text-align: center;
   text-transform: uppercase;
   color: #052c6f;
@@ -741,6 +808,218 @@ nav .logo {
 .thankYouImageWrap img {
   width: 100%;
   object-fit: cover;
+  opacity: 0;
+}
+
+.movieInfoContainer {
+  background-color: #041939;
+}
+
+.movieInfoBanner {
+  position: relative;
+  height: 60rem;
+  overflow: hidden;
+}
+.movieInfoBanner .trollsBannerImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.movieInfoBanner .movieInfoBannerVideo {
+  width: 100%;
+  height: 100%;
+  background-color: #041939;
+  object-fit: cover;
+}
+@media screen and (min-width: 768px) {
+  .movieInfoBanner {
+    height: 65rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .movieInfoBanner {
+    height: 70rem;
+  }
+}
+
+.movieInfoBannerOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.trollsMovieTitle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+}
+@media screen and (min-width: 520px) {
+  .trollsMovieTitle {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .trollsMovieTitle {
+    width: 40%;
+  }
+}
+@media screen and (min-width: 992px) {
+  .trollsMovieTitle {
+    width: 35%;
+  }
+}
+.trollsMovieTitle img {
+  width: 100%;
+  height: 100%;
+}
+
+.movieInfoAbout {
+  padding: 7rem 0 4rem 0;
+  background-color: #041939;
+  color: white;
+  margin-bottom: 5rem;
+}
+@media screen and (min-width: 520px) {
+  .movieInfoAbout {
+    padding-top: 9rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .movieInfoAbout {
+    display: flex;
+    margin-bottom: 10rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .movieInfoAbout {
+    margin-bottom: 18rem;
+  }
+}
+
+.aboutMovieTitle {
+  font-family: "Bemio", helvetica, arial, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+}
+@media screen and (min-width: 520px) {
+  .aboutMovieTitle {
+    margin-bottom: 5rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .aboutMovieTitle {
+    text-align: left;
+    margin-bottom: 2rem;
+  }
+}
+
+.movieInfoAboutTextWrap {
+  padding: 0 3rem;
+}
+@media screen and (min-width: 768px) {
+  .movieInfoAboutTextWrap {
+    width: 50%;
+    padding: 0 4rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .movieInfoAboutTextWrap {
+    padding: 0 8rem;
+  }
+}
+
+.movieInfoAboutImage {
+  position: relative;
+}
+.movieInfoAboutImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media screen and (min-width: 768px) {
+  .movieInfoAboutImage {
+    width: 50%;
+  }
+}
+
+.aboutMovieMobileDescWrap {
+  position: relative;
+  max-height: 12rem;
+  overflow: hidden;
+}
+.aboutMovieMobileDescWrap .readMoreFade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  z-index: 1;
+  background: linear-gradient(0deg, #041939 0, rgba(4, 25, 57, 0));
+}
+
+.aboutMovieDesc {
+  padding: 1rem 2rem;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  margin: 0;
+}
+@media screen and (min-width: 768px) {
+  .aboutMovieDesc {
+    padding: 0;
+    font-size: 1.5rem;
+    line-height: 2.3rem;
+  }
+}
+
+.aboutMovieReadMoreButton {
+  margin-top: 4rem;
+  margin-left: 2rem;
+  text-transform: uppercase;
+  padding: 1rem 5rem;
+  border: 1px solid white;
+  color: white;
+  background-color: transparent;
+  font-weight: 700;
+  outline: none !important;
+}
+
+.aboutMovieReadMoreButtonHide {
+  display: none;
+}
+
+.movieTrailer {
+  width: 100%;
+  height: 33rem;
+  margin-bottom: 10rem;
+}
+@media screen and (min-width: 520px) {
+  .movieTrailer {
+    height: 37rem;
+    margin-bottom: 17rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .movieTrailer {
+    height: 43rem;
+    margin-bottom: 20rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .movieTrailer {
+    height: 53rem;
+    margin-bottom: 30rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .movieTrailer {
+    height: 67rem;
+  }
 }
 
 footer {
