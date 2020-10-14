@@ -22,6 +22,8 @@ const MovieInfo: React.FC<{}> = () => {
         setDesktop(window.innerWidth > medium_screen_size);
     };
 
+    const [readMore, setReadMore] = useState(false);
+
     const renderBannerVideoOrImg = () => {
         if (isDesktop) {
             return (
@@ -105,19 +107,32 @@ const MovieInfo: React.FC<{}> = () => {
                     <div className="movieInfoAboutImage">
                         <img src={trollsAboutMobile}></img>
                     </div>
-
-                    <p className="aboutMovieDesc">
-                        Anna Kendrick and Justin Timberlake return in an
-                        all-star sequel to DreamWorks Animation’s 2016 musical
-                        hit: Trolls World Tour. In an adventure that will take
-                        them well beyond what they’ve known before, Poppy
-                        (Kendrick) and Branch (Timberlake) discover that they
-                        are but one of six different Troll tribes scattered over
-                        six different lands and devoted to six different kinds
-                        of music: Funk, Country, Techno, Classical, Pop and
-                        Rock. Their world is about to get a lot bigger and a
-                        whole lot louder.
-                    </p>
+                    <div className={readMore ? "" : "aboutMovieMobileDescWrap"}>
+                        <p className="aboutMovieDesc">
+                            Anna Kendrick and Justin Timberlake return in an
+                            all-star sequel to DreamWorks Animation’s 2016
+                            musical hit: Trolls World Tour. In an adventure that
+                            will take them well beyond what they’ve known
+                            before, Poppy (Kendrick) and Branch (Timberlake)
+                            discover that they are but one of six different
+                            Troll tribes scattered over six different lands and
+                            devoted to six different kinds of music: Funk,
+                            Country, Techno, Classical, Pop and Rock. Their
+                            world is about to get a lot bigger and a whole lot
+                            louder.
+                        </p>
+                        <div className="readMoreFade"></div>
+                    </div>
+                    <button
+                        onClick={() => setReadMore(true)}
+                        className={
+                            readMore
+                                ? "aboutMovieReadMoreButtonHide"
+                                : "aboutMovieReadMoreButton"
+                        }
+                    >
+                        Read more
+                    </button>
                 </React.Fragment>
             );
         }
