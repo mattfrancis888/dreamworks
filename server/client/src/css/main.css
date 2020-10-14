@@ -355,9 +355,21 @@ html {
 
 body {
   /*Make default font-size bigger. If default font-size is 16px; 1.6 rem = 16 px*/
-  font: 1.1rem helvetica, arial, sans-serif;
+  font: 1.1rem "TT Norms", helvetica, arial, sans-serif;
 }
 
+@font-face {
+  font-family: "Bemio";
+  src: url(../fonts/Bemio.otf) format("opentype");
+}
+@font-face {
+  font-family: "TT Norms";
+  src: url(../fonts/TTNorms-Regular.otf) format("opentype");
+}
+@font-face {
+  font-family: "TT Norms Bold";
+  src: url(../fonts/TTNorms-Bold.otf) format("opentype");
+}
 nav {
   z-index: 2;
   width: 100%;
@@ -423,6 +435,7 @@ nav .logo {
   }
 }
 .bannerInfoWrap .bannerTitle {
+  font-family: "TT Norms Bold", helvetica, arial, sans-serif;
   margin: 0;
   text-transform: uppercase;
   font-weight: 700;
@@ -594,6 +607,7 @@ nav .logo {
 }
 
 .aboutCarouselTitle {
+  font-family: "TT Norms Bold";
   color: white;
   font-size: 2.2rem;
   opacity: 0;
@@ -693,6 +707,7 @@ nav .logo {
 
 .aboutCarouselOverlayText {
   color: white;
+  font-family: "TT Norms Bold";
   z-index: 1;
   position: absolute;
   top: 50%;
@@ -714,6 +729,7 @@ nav .logo {
 }
 
 .bodyMoviesTitle {
+  font-family: "TT Norms Bold";
   text-transform: uppercase;
   letter-spacing: 0.03rem;
   color: #052c6f;
@@ -749,6 +765,7 @@ nav .logo {
   }
 }
 .thankYouTextWrap h1 {
+  font-family: "TT Norms Bold";
   text-align: center;
   text-transform: uppercase;
   color: #052c6f;
@@ -878,6 +895,7 @@ nav .logo {
 }
 
 .aboutMovieTitle {
+  font-family: "Bemio", helvetica, arial, sans-serif;
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 3rem;
