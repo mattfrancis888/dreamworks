@@ -34,7 +34,6 @@ const MovieInfo: React.FC<{}> = () => {
                     loop
                     muted
                     playsInline
-                    alt="troll movie trailer"
                     src={trollVid}
                 ></video>
             );
@@ -171,6 +170,13 @@ const MovieInfo: React.FC<{}> = () => {
                 />
             </div>
             <div className="movieInfoAbout">{renderAbout()}</div>
+            <iframe
+                className="movieTrailer"
+                src="https://www.youtube.com/embed/yP86-TR6IME"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+            ></iframe>
         </div>
     );
 };
