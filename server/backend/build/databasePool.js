@@ -10,3 +10,4 @@ var pool = new pg_1.Pool({
     password: process.env.password,
     port: 5432,
 });
+exports.default = pool;
