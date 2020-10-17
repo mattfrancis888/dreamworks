@@ -450,6 +450,28 @@ nav .logo {
   }
 }
 
+.loadingCenter {
+  text-align: center;
+  padding-bottom: 2rem;
+}
+.loadingCenter > div {
+  width: 10rem;
+  height: 10rem;
+}
+@media screen and (min-width: 520px) {
+  .loadingCenter > div {
+    width: 12rem;
+    height: 12rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .loadingCenter > div {
+    width: 16rem;
+    height: 16rem;
+    padding-bottom: 5rem;
+  }
+}
+
 .moviesCarouselWrap {
   padding: 0 3rem;
   margin-bottom: 5rem;
@@ -554,6 +576,8 @@ nav .logo {
 }
 
 .moviePosterTitle {
+  font-family: "TT Norms Bold";
+  letter-spacing: 0.04rem;
   z-index: 1;
   position: absolute;
   color: white;

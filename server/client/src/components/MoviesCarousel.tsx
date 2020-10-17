@@ -17,6 +17,7 @@ import anime from "animejs/lib/anime.es.js";
 import { Movie, fetchMovies } from "../actions";
 import { connect } from "react-redux";
 import { StoreState } from "../reducers";
+import Loading from "./Loading";
 
 interface MoviesCarouselProps {
     fetchMovies(): void;
@@ -29,7 +30,11 @@ const MoviesCarousel: React.FC<MoviesCarouselProps> = (props) => {
     }, []);
     const renderCarousel = (): JSX.Element | JSX.Element[] => {
         if (props.movies.length === 0)
-            return <div className="loadingCenter">Loading</div>;
+            return (
+                <div className="loadingCenter">
+                    <Loading />
+                </div>
+            );
         else {
             return (
                 <CarouselProvider

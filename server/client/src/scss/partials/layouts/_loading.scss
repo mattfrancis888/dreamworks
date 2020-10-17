@@ -1,0 +1,17 @@
+.loadingCenter {
+    text-align: center;
+    padding-bottom: 2rem;
+    & > div {
+        width: 10rem;
+        height: 10rem;
+        @media screen and (min-width: $sm_breakpoint) {
+            width: 12rem;
+            height: 12rem;
+        }
+        @media screen and (min-width: $md_breakpoint) {
+            width: 16rem;
+            height: 16rem;
+            padding-bottom: 5rem;
+        }
+    }
+}
