@@ -1,13 +1,15 @@
 import express from "express";
 import dotenv from "dotenv";
+import cors from "cors";
 if (process.env.NODE_ENV !== "production") {
     //We don't need dotenv when in production
     dotenv.config();
 }
+
 import movieRoutes from "./routes/movieRoutes";
 const app = express();
+app.use(cors());
 const port = 5000;
-import pool from "./databasePool";
 
 console.log(process.env.NODE_ENV);
 app.use("/movies", movieRoutes);
