@@ -10,7 +10,7 @@ const Routes: React.FC<{}> = () => {
             <Header />
             <Switch>
                 <Route path="/" exact component={Body} />
-                <Route path="/movie" exact component={MovieInfo} />
+                <Route path="/movies/:movieName" exact component={MovieInfo} />
             </Switch>
             <Footer />
         </React.Fragment>

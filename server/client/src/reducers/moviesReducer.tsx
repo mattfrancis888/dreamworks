@@ -1,6 +1,6 @@
-import { ActionTypes, FetchMoviesAction, Movie } from "../actions";
+import { ActionTypes, FetchMoviesAction, MovieType } from "../actions";
 
-export default (state: Movie[] = [], action: FetchMoviesAction) => {
+export default (state: MovieType[] = [], action: FetchMoviesAction) => {
     switch (action.type) {
         case ActionTypes.FETCH_MOVIES:
             return action.payload;

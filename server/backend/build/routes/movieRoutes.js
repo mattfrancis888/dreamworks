@@ -44,7 +44,18 @@ var databasePool_1 = __importDefault(require("../databasePool"));
 var router = express_1.Router();
 router.get("/", function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
-        databasePool_1.default.query("SELECT * FROM movies", function (error, response) {
+        databasePool_1.default.query("SELECT id, title, poster, movie_name_for_url FROM full_movie_info ORDER BY id ASC", function (error, response) {
+            if (error)
+                return console.log(error);
+            res.status(200).send(response.rows);
+        });
+        return [2 /*return*/];
+    });
+}); });
+router.get("/:movieName", function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+    return __generator(this, function (_a) {
+        console.log(req.params);
+        databasePool_1.default.query("SELECT * FROM full_movie_info WHERE movie_name_for_url = '" + req.params.movieName + "' ", function (error, response) {
             if (error)
                 return console.log(error);
             res.status(200).send(response.rows);

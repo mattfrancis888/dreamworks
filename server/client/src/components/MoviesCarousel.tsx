@@ -14,17 +14,20 @@ import { RiArrowRightSLine, RiArrowLeftSLine } from "react-icons/ri";
 import { IconContext } from "react-icons";
 import LazyLoad from "react-lazyload";
 import anime from "animejs/lib/anime.es.js";
-import { Movie, fetchMovies } from "../actions";
+import { MovieType, fetchMovies } from "../actions";
 import { connect } from "react-redux";
 import { StoreState } from "../reducers";
 import Loading from "./Loading";
+import { useHistory } from "react-router-dom";
 
 interface MoviesCarouselProps {
     fetchMovies(): void;
-    movies: Movie[];
+    movies: MovieType[];
 }
 
 const MoviesCarousel: React.FC<MoviesCarouselProps> = (props) => {
+    const history = useHistory();
+
     useEffect(() => {
         props.fetchMovies();
     }, []);
@@ -49,7 +52,14 @@ const MoviesCarousel: React.FC<MoviesCarouselProps> = (props) => {
                         <Slider>
                             <Slide index={0}>
                                 <LazyLoad>
-                                    <div className="movieContainerCarousel movieOne">
+                                    <div
+                                        className="movieContainerCarousel movieOne"
+                                        onClick={() =>
+                                            history.push(
+                                                `movies/${props.movies[0].movie_name_for_url}`
+                                            )
+                                        }
+                                    >
                                         <img
                                             src={props.movies[0].poster}
                                             onLoad={() => {

@@ -1,17 +1,34 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { RouteComponentProps } from "react-router-dom";
 import trollsMovieInfoMobile from "../img/trollsMovieInfoMobile.jpg";
 import trollsMovieInfoTitle from "../img/trollsMovieInfoTitle.png";
 import trollVid from "../videos/trollVid.mp4";
 import anime from "animejs/lib/anime.es.js";
 import trollsAboutMobile from "../img/trollsAboutMobile.jpg";
 import trollAboutDesktop from "../img/trollsAboutDesktop.jpg";
-const MovieInfo: React.FC<{}> = () => {
-    //const history = useHistory();
+import { MovieInfoType, fetchMovieInfo } from "../actions";
+import { connect } from "react-redux";
+import { StoreState } from "../reducers";
+
+interface MovieInfoRouteParam {
+    movieName: string;
+}
+
+interface MovieInfoProps extends RouteComponentProps<MovieInfoRouteParam> {
+    fetchMovieInfo(movieName: string): void;
+    movieInfo: MovieInfoType[];
+}
+
+const MovieInfo: React.FC<MovieInfoProps> = (props) => {
+    useEffect(() => {
+        props.fetchMovieInfo(props.match.params.movieName);
+    }, []);
+    console.log(props.movieInfo);
 
     //Note: Make sure it's the same as the viewports defined in scss/utilities/_variables
     //We could also use this for media queries:
     //https://www.npmjs.com/package/react-responsive
+
     const medium_screen_size = 768;
 
     const [isDesktop, setDesktop] = useState(
@@ -180,5 +197,9 @@ const MovieInfo: React.FC<{}> = () => {
         </div>
     );
 };
-
-export default MovieInfo;
+const mapStateToProps = (state: StoreState) => {
+    return {
+        movieInfo: state.movieInfo,
+    };
+};
+export default connect(mapStateToProps, { fetchMovieInfo })(MovieInfo);
