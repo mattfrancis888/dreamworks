@@ -50,16 +50,16 @@ const MoviesCarousel: React.FC<MoviesCarouselProps> = (props) => {
                 >
                     <div className="sliderAndButtonWrap">
                         <Slider>
-                            <Slide index={0}>
+                            <Slide
+                                index={0}
+                                onClick={() =>
+                                    history.push(
+                                        `movies/${props.movies[0].movie_name_for_url}`
+                                    )
+                                }
+                            >
                                 <LazyLoad>
-                                    <div
-                                        className="movieContainerCarousel movieOne"
-                                        onClick={() =>
-                                            history.push(
-                                                `movies/${props.movies[0].movie_name_for_url}`
-                                            )
-                                        }
-                                    >
+                                    <div className="movieContainerCarousel movieOne">
                                         <img
                                             src={props.movies[0].poster}
                                             onLoad={() => {
@@ -90,7 +90,14 @@ const MoviesCarousel: React.FC<MoviesCarouselProps> = (props) => {
                                     </div>
                                 </LazyLoad>
                             </Slide>
-                            <Slide index={1}>
+                            <Slide
+                                index={1}
+                                onClick={() =>
+                                    history.push(
+                                        `movies/${props.movies[1].movie_name_for_url}`
+                                    )
+                                }
+                            >
                                 <LazyLoad>
                                     <div className="movieContainerCarousel movieTwo">
                                         <img
@@ -123,7 +130,14 @@ const MoviesCarousel: React.FC<MoviesCarouselProps> = (props) => {
                                     </div>
                                 </LazyLoad>
                             </Slide>
-                            <Slide index={2}>
+                            <Slide
+                                index={2}
+                                onClick={() =>
+                                    history.push(
+                                        `movies/${props.movies[2].movie_name_for_url}`
+                                    )
+                                }
+                            >
                                 <LazyLoad>
                                     <div className="movieContainerCarousel movieThree">
                                         <img
@@ -155,7 +169,14 @@ const MoviesCarousel: React.FC<MoviesCarouselProps> = (props) => {
                                     </div>
                                 </LazyLoad>
                             </Slide>
-                            <Slide index={3}>
+                            <Slide
+                                index={3}
+                                onClick={() =>
+                                    history.push(
+                                        `movies/${props.movies[3].movie_name_for_url}`
+                                    )
+                                }
+                            >
                                 <img src={props.movies[3].poster}></img>
                                 <h1 className="moviePosterTitle">
                                     {props.movies[3].title}

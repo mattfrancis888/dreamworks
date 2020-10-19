@@ -43,7 +43,9 @@ export const fetchMovies = () => async (dispatch: Dispatch) => {
 export const fetchMovieInfo = (movieName: string) => async (
     dispatch: Dispatch
 ) => {
+    console.log("data");
     const response = await movies.get<MovieInfoType[]>(`/movies/${movieName}`);
+
     dispatch<FetchMovieInfoAction>({
         type: ActionTypes.FETCH_MOVIE_INFO,
         payload: response.data,

@@ -13,7 +13,6 @@ router.get("/", async (req: Request, res: Response) => {
 });
 
 router.get("/:movieName", async (req: any, res: Response) => {
-    console.log(req.params);
     pool.query(
         `SELECT * FROM full_movie_info WHERE movie_name_for_url = '${req.params.movieName}' `,
         (error, response) => {
