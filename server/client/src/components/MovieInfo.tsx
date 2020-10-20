@@ -158,7 +158,7 @@ const MovieInfo: React.FC<MovieInfoProps> = (props) => {
     const renderContent = (): any => {
         if (props.movieInfo.length === 0) {
             return (
-                <div className="loadingCenter">
+                <div className="loadingCenter loadingFillViewport">
                     <Loading />
                 </div>
             );

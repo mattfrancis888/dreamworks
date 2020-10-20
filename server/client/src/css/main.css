@@ -451,7 +451,9 @@ nav .logo {
 }
 
 .loadingCenter {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding-bottom: 2rem;
 }
 .loadingCenter > div {
@@ -470,6 +472,12 @@ nav .logo {
     height: 16rem;
     padding-bottom: 5rem;
   }
+}
+
+.loadingFillViewport {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
 }
 
 .moviesCarouselWrap {
