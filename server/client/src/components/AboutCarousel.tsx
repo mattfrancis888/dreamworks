@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import trollsMovie from "../img/trollsMovie.jpg";
-import theCroodsMovie from "../img/theCroodsMovie.jpg";
-import abominableMovie from "../img/abominableMovie.jpg";
+import aboutCampus from "../img/aboutCampus.jpg";
+import aboutFilms from "../img/aboutFilms.jpg";
+import aboutTech from "../img/aboutTech.jpg";
 
 import {
     CarouselProvider,
@@ -109,12 +109,12 @@ const AboutCarousel: React.FC<{}> = () => {
                         <LazyLoad>
                             <div className="aboutCarouselImageContainer">
                                 <h1 className="aboutCarouselOverlayText">
-                                    award-winning television
+                                    Campus
                                 </h1>
 
                                 <div className="aboutCarouselOverlay"></div>
                                 <img
-                                    src={trollsMovie}
+                                    src={aboutCampus}
                                     onLoad={() => {
                                         anime({
                                             targets:
@@ -146,14 +146,16 @@ const AboutCarousel: React.FC<{}> = () => {
                         <div className="aboutCarouselImageContainer">
                             <div className="aboutCarouselOverlay"></div>
                             <h1 className="aboutCarouselOverlayText">
-                                award-winning television
+                                Iconic Feature Films
                             </h1>
-                            <img src={theCroodsMovie}></img>
+                            <img src={aboutFilms}></img>
                         </div>
                         <p className="aboutCarouselDescription">
-                            In 2013, the DWA Television division was launched
-                            into being with a groundbreaking deal for hundreds
-                            of hours of kids and family programming.
+                            Home to some of the world's most beloved franchises
+                            including Shrek, Madagascar, Kung Fu Panda, Trolls,
+                            The Boss Baby, The Croods, and How to Train Your
+                            Dragon, DreamWorks Animation creates award-winning
+                            films for a global audience.
                         </p>
                     </div>
                 </Slide>
@@ -162,14 +164,13 @@ const AboutCarousel: React.FC<{}> = () => {
                         <div className="aboutCarouselImageContainer">
                             <div className="aboutCarouselOverlay"></div>
                             <h1 className="aboutCarouselOverlayText">
-                                award-winning television
+                                Innovative Technology
                             </h1>
-                            <img src={abominableMovie}></img>
+                            <img src={aboutTech}></img>
                         </div>
                         <p className="aboutCarouselDescription">
-                            In 2013, the DWA Television division was launched
-                            into being with a groundbreaking deal for hundreds
-                            of hours of kids and family programming.
+                            Developing for the future and innovating in the
+                            present. DreamWorks Technology unleashes art.
                         </p>
                     </div>
                 </Slide>
