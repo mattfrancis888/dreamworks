@@ -45,7 +45,38 @@
     position: relative;
     opacity: 0;
 }
+.moviePosterTitleFade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.75) 0, transparent 34%);
+}
+.moviePosterTitle {
+    font-family: "TT Norms Bold";
+    letter-spacing: 0.04rem;
+    z-index: 1;
+    position: absolute;
+    color: white;
+    text-transform: uppercase;
+    bottom: 1rem;
+    left: 1rem;
+    font-size: 0.6rem;
+    padding-right: 1rem;
+    @media screen and (min-width: $sm_breakpoint) {
+        bottom: 2rem;
+        font-size: 1rem;
+    }
+    @media screen and (min-width: $md_breakpoint) {
+        font-size: 1.4rem;
+    }
 
+    @media screen and (min-width: $xl_breakpoint) {
+        font-size: 2rem;
+    }
+}
 .movieOverlay {
     position: absolute;
     top: 0;
@@ -72,7 +103,6 @@
             font-size: 2rem;
         }
         filter: none;
-        z-index: 1;
     }
     opacity: 0;
     transition: all 0.3s ease;

@@ -4,13 +4,14 @@ import Header from "./Header";
 import Body from "./Body";
 import Footer from "./Footer";
 import MovieInfo from "./MovieInfo";
+
 const Routes: React.FC<{}> = () => {
     return (
         <React.Fragment>
             <Header />
             <Switch>
                 <Route path="/" exact component={Body} />
-                <Route path="/movie" exact component={MovieInfo} />
+                <Route path="/movies/:movieName" exact component={MovieInfo} />
             </Switch>
             <Footer />
         </React.Fragment>

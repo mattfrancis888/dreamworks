@@ -450,6 +450,36 @@ nav .logo {
   }
 }
 
+.loadingCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 2rem;
+}
+.loadingCenter > div {
+  width: 10rem;
+  height: 10rem;
+}
+@media screen and (min-width: 520px) {
+  .loadingCenter > div {
+    width: 12rem;
+    height: 12rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .loadingCenter > div {
+    width: 16rem;
+    height: 16rem;
+    padding-bottom: 5rem;
+  }
+}
+
+.loadingFillViewport {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+}
+
 .moviesCarouselWrap {
   padding: 0 3rem;
   margin-bottom: 5rem;
@@ -543,6 +573,45 @@ nav .logo {
   opacity: 0;
 }
 
+.moviePosterTitleFade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.75) 0, transparent 34%);
+}
+
+.moviePosterTitle {
+  font-family: "TT Norms Bold";
+  letter-spacing: 0.04rem;
+  z-index: 1;
+  position: absolute;
+  color: white;
+  text-transform: uppercase;
+  bottom: 1rem;
+  left: 1rem;
+  font-size: 0.6rem;
+  padding-right: 1rem;
+}
+@media screen and (min-width: 520px) {
+  .moviePosterTitle {
+    bottom: 2rem;
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .moviePosterTitle {
+    font-size: 1.4rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .moviePosterTitle {
+    font-size: 2rem;
+  }
+}
+
 .movieOverlay {
   position: absolute;
   top: 0;
@@ -563,7 +632,6 @@ nav .logo {
   text-transform: uppercase;
   font-size: 0.8rem;
   filter: none;
-  z-index: 1;
 }
 @media screen and (min-width: 520px) {
   .movieOverlay h3 {
@@ -820,7 +888,8 @@ nav .logo {
   height: 60rem;
   overflow: hidden;
 }
-.movieInfoBanner .trollsBannerImg {
+.movieInfoBanner .movieInfoBannerImageMobile {
+  opacity: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -851,7 +920,8 @@ nav .logo {
   background: rgba(0, 0, 0, 0.5);
 }
 
-.trollsMovieTitle {
+.movieInfoLogo {
+  opacity: 0;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -859,21 +929,21 @@ nav .logo {
   width: 80%;
 }
 @media screen and (min-width: 520px) {
-  .trollsMovieTitle {
+  .movieInfoLogo {
     width: 50%;
   }
 }
 @media screen and (min-width: 768px) {
-  .trollsMovieTitle {
+  .movieInfoLogo {
     width: 40%;
   }
 }
 @media screen and (min-width: 992px) {
-  .trollsMovieTitle {
+  .movieInfoLogo {
     width: 35%;
   }
 }
-.trollsMovieTitle img {
+.movieInfoLogo img {
   width: 100%;
   height: 100%;
 }
@@ -934,16 +1004,18 @@ nav .logo {
   }
 }
 
-.movieInfoAboutImage {
+.movieInfoAboutImageContainer {
   position: relative;
 }
-.movieInfoAboutImage img {
+.movieInfoAboutImageContainer .movieInfoAboutImageDesktop,
+.movieInfoAboutImageContainer .movieInfoAboutImageMobile {
+  opacity: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 @media screen and (min-width: 768px) {
-  .movieInfoAboutImage {
+  .movieInfoAboutImageContainer {
     width: 50%;
   }
 }
@@ -964,6 +1036,7 @@ nav .logo {
 }
 
 .aboutMovieDesc {
+  white-space: pre-line;
   padding: 1rem 2rem;
   font-size: 1.4rem;
   line-height: 2rem;

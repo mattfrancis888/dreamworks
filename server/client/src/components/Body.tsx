@@ -6,10 +6,9 @@ import trolls from "../img/trolls.jpg";
 import "pure-react-carousel/dist/react-carousel.es.css";
 import LazyLoad from "react-lazyload";
 import anime from "animejs/lib/anime.es.js";
-
 import { useInView } from "react-intersection-observer";
 
-const Body: React.FC<{}> = () => {
+const Body: React.FC<{}> = (props) => {
     //https://stackoverflow.com/questions/59953580/framer-check-if-element-is-into-viewport
 
     // const { ref, inView, entry } = useInView({
