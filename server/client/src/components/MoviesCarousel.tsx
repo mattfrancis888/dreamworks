@@ -1,7 +1,4 @@
 import React, { useEffect, useState } from "react";
-import trollsMovie from "../img/trollsMovie.jpg";
-import theCroodsMovie from "../img/theCroodsMovie.jpg";
-import abominableMovie from "../img/abominableMovie.jpg";
 import {
     CarouselProvider,
     Slider,
@@ -78,6 +75,7 @@ const MoviesCarousel: React.FC<MoviesCarouselProps> = (props) => {
                                                     ],
                                                 });
                                             }}
+                                            alt="movie poster"
                                         ></img>
                                         <div className="moviePosterTitleFade"></div>
                                         <h1 className="moviePosterTitle">
@@ -118,6 +116,7 @@ const MoviesCarousel: React.FC<MoviesCarouselProps> = (props) => {
                                                     ],
                                                 });
                                             }}
+                                            alt="movie poster"
                                         ></img>
                                         <div className="moviePosterTitleFade"></div>
                                         <h1 className="moviePosterTitle">
@@ -158,6 +157,7 @@ const MoviesCarousel: React.FC<MoviesCarouselProps> = (props) => {
                                                     ],
                                                 });
                                             }}
+                                            alt="movie poster"
                                         ></img>
                                         <div className="moviePosterTitleFade"></div>
                                         <h1 className="moviePosterTitle">
@@ -177,7 +177,10 @@ const MoviesCarousel: React.FC<MoviesCarouselProps> = (props) => {
                                     )
                                 }
                             >
-                                <img src={props.movies[3].poster}></img>
+                                <img
+                                    src={props.movies[3].poster}
+                                    alt="movie poster"
+                                ></img>
                                 <h1 className="moviePosterTitle">
                                     {props.movies[3].title}
                                 </h1>

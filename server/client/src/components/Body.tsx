@@ -8,7 +8,7 @@ import LazyLoad from "react-lazyload";
 import anime from "animejs/lib/anime.es.js";
 import { useInView } from "react-intersection-observer";
 
-const Body: React.FC<{}> = (props) => {
+const Body: React.FC<{}> = () => {
     //https://stackoverflow.com/questions/59953580/framer-check-if-element-is-into-viewport
 
     // const { ref, inView, entry } = useInView({

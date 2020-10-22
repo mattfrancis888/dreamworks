@@ -67,6 +67,7 @@ const MovieInfo: React.FC<MovieInfoProps> = (props) => {
                             ],
                         });
                     }}
+                    alt="movie scene"
                 />
             );
         }
@@ -101,6 +102,7 @@ const MovieInfo: React.FC<MovieInfoProps> = (props) => {
                                     ],
                                 });
                             }}
+                            alt="about movie"
                         ></img>
                     </div>
                 </React.Fragment>
@@ -126,6 +128,7 @@ const MovieInfo: React.FC<MovieInfoProps> = (props) => {
                                     ],
                                 });
                             }}
+                            alt="about movie"
                         ></img>
                     </div>
                     <div className={readMore ? "" : "aboutMovieMobileDescWrap"}>
@@ -186,6 +189,7 @@ const MovieInfo: React.FC<MovieInfoProps> = (props) => {
                                     ],
                                 });
                             }}
+                            alt="logo for movie"
                         />
                     </div>
                     <div className="movieInfoAbout">{renderAbout()}</div>
@@ -195,6 +199,7 @@ const MovieInfo: React.FC<MovieInfoProps> = (props) => {
                         frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
+                        title="trailer"
                     ></iframe>
                 </div>
             );
