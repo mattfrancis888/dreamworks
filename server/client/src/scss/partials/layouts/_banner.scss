@@ -15,6 +15,7 @@
 }
 
 .bannerInfoWrap {
+    z-index: 1;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -78,6 +79,8 @@
         bottom: 2rem;
         font-size: 1.2rem;
     }
+    outline: none !important;
+    box-shadow: none !important;
 }
 .unclickedBannerDot {
     border: none;
@@ -92,9 +95,8 @@
 .clickedBannerDot {
     border: none;
     background: transparent;
-    outline: none !important;
+
     padding: 0 2rem;
-    box-shadow: none !important;
     border-bottom: 3px solid $light-blue;
     h3 {
         color: white;
@@ -102,6 +104,7 @@
 }
 
 .bannerOfficialSiteButton {
+    cursor: pointer;
     font-family: "TT Norms Bold";
     letter-spacing: 0.05rem;
     padding: 0.5rem 1rem;

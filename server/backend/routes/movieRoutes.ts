@@ -4,7 +4,7 @@ import pool from "../databasePool";
 const router = Router();
 router.get("/", async (req: Request, res: Response) => {
     pool.query(
-        "SELECT id, title, poster, movie_name_for_url FROM full_movie_info ORDER BY id ASC",
+        "SELECT id, title, poster, movie_name_for_url, banner_image, banner_video FROM full_movie_info ORDER BY id ASC",
         (error, response) => {
             if (error) return console.log(error);
             res.status(200).send(response.rows);

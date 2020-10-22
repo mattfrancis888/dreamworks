@@ -406,6 +406,7 @@ nav .logo {
 }
 
 .bannerInfoWrap {
+  z-index: 1;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -466,6 +467,8 @@ nav .logo {
   bottom: 1rem;
   transform: translateX(-50%);
   font-size: 0.7rem;
+  outline: none !important;
+  box-shadow: none !important;
 }
 .bannerDotsWrap h3 {
   font-family: "TT Norms Bold";
@@ -499,9 +502,7 @@ nav .logo {
 .clickedBannerDot {
   border: none;
   background: transparent;
-  outline: none !important;
   padding: 0 2rem;
-  box-shadow: none !important;
   border-bottom: 3px solid #055ebb;
 }
 .clickedBannerDot h3 {
@@ -509,6 +510,7 @@ nav .logo {
 }
 
 .bannerOfficialSiteButton {
+  cursor: pointer;
   font-family: "TT Norms Bold";
   letter-spacing: 0.05rem;
   padding: 0.5rem 1rem;
