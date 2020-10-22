@@ -5,6 +5,8 @@ import { MovieInfoType, fetchMovieInfo } from "../actions";
 import { connect } from "react-redux";
 import { StoreState } from "../reducers";
 import Loading from "./Loading";
+import useWindowDimensions from "./windowDimensions";
+import { MED_SCREEN_SIZE } from "../constants";
 
 interface MovieInfoRouteParam {
     movieName: string;
@@ -16,28 +18,15 @@ interface MovieInfoProps extends RouteComponentProps<MovieInfoRouteParam> {
 }
 
 const MovieInfo: React.FC<MovieInfoProps> = (props) => {
+    const { width } = useWindowDimensions();
     useEffect(() => {
         props.fetchMovieInfo(props.match.params.movieName);
     }, []);
 
-    //Note: Make sure it's the same as the viewports defined in scss/utilities/_variables
-    //We could also use this for media queries:
-    //https://www.npmjs.com/package/react-responsive
-
-    const medium_screen_size = 768;
-
-    const [isDesktop, setDesktop] = useState(
-        window.innerWidth > medium_screen_size
-    );
-
-    const updateMedia = () => {
-        setDesktop(window.innerWidth > medium_screen_size);
-    };
-
     const [readMore, setReadMore] = useState(false);
 
     const renderBannerVideoOrImg = () => {
-        if (isDesktop) {
+        if (width > MED_SCREEN_SIZE) {
             return (
                 <video
                     className="movieInfoBannerVideo"
@@ -76,7 +65,7 @@ const MovieInfo: React.FC<MovieInfoProps> = (props) => {
     const renderAbout = () => {
         //Note: white-space: pre-line is used in aboutMovieDesc class so that line breaks (/n) can be recognized by React
         //https://stackoverflow.com/questions/35351706/how-to-render-a-multi-line-text-string-in-react
-        if (isDesktop) {
+        if (width > MED_SCREEN_SIZE) {
             return (
                 <React.Fragment>
                     <div className="movieInfoAboutTextWrap">

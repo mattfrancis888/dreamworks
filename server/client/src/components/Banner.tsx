@@ -7,6 +7,9 @@ import { connect } from "react-redux";
 import { StoreState } from "../reducers";
 import { MovieType, fetchMovies } from "../actions";
 import { useHistory } from "react-router-dom";
+import useWindowDimensions from "./windowDimensions";
+import { MED_SCREEN_SIZE } from "../constants";
+import anime from "animejs/lib/anime.es.js";
 
 interface BannerProps {
     fetchMovies(): void;
@@ -17,12 +20,49 @@ const Banner: React.FC<BannerProps> = (props) => {
     const [slide1IsClicked, setSlide1DotIsClicked] = useState(true);
     const [slide2IsClicked, setSlide2DotIsClicked] = useState(false);
     const [slide3IsClicked, setSlide3DotIsClicked] = useState(false);
-
+    const { width } = useWindowDimensions();
     const history = useHistory();
 
     useEffect(() => {
         props.fetchMovies();
     }, []);
+
+    const renderBannerVideoOrImg = (movieIndex: number) => {
+        if (width > MED_SCREEN_SIZE) {
+            return (
+                <video
+                    className="bannerVideo"
+                    autoPlay
+                    preload="false"
+                    loop
+                    muted
+                    playsInline
+                    src={props.movies[movieIndex].banner_video}
+                ></video>
+            );
+        } else {
+            return (
+                <img
+                    className="movieInfoBannerImageMobile"
+                    src={props.movies[movieIndex].banner_image}
+                    onLoad={() => {
+                        anime({
+                            targets: ".movieInfoBannerImageMobile",
+
+                            opacity: [
+                                {
+                                    value: [0, 1],
+                                    duration: 2000,
+                                    easing: "easeOutQuad",
+                                },
+                            ],
+                        });
+                    }}
+                    alt="movie scene"
+                />
+            );
+        }
+    };
 
     const renderCarousel = (): JSX.Element | JSX.Element[] => {
         if (props.movies.length === 0) return <div></div>;
@@ -85,15 +125,7 @@ const Banner: React.FC<BannerProps> = (props) => {
                                     Official Site
                                 </button>
                             </div>
-                            <video
-                                className="bannerVideo"
-                                autoPlay
-                                preload="false"
-                                loop
-                                muted
-                                playsInline
-                                src={props.movies[1].banner_video}
-                            ></video>
+                            {renderBannerVideoOrImg(1)}
                         </Slide>
                     </Slider>
                     <div className="bannerDotsWrap">
