@@ -1,7 +1,7 @@
 .bannerContainer {
     position: relative;
     color: white;
-    height: 31rem;
+    overflow: hidden;
 
     img {
         width: 100%;
@@ -15,6 +15,7 @@
 }
 
 .bannerInfoWrap {
+    z-index: 1;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -30,24 +31,117 @@
         margin: 0;
         text-transform: uppercase;
         font-weight: 200;
-        font-size: 1.5rem;
-        margin-bottom: 1.7rem;
+        font-size: 0.8rem;
+        margin-bottom: 0.5rem;
         letter-spacing: 0.04rem;
         @media screen and (min-width: $md_breakpoint) {
-            font-size: 2rem;
+            margin-bottom: 1.7rem;
+            font-size: 1.6rem;
         }
     }
     .bannerTitle {
+        display: block;
         font-family: "TT Norms Bold", $fallback-fonts;
         margin: 0;
         text-transform: uppercase;
         font-weight: 700;
-        font-size: 3rem;
-        max-width: 50rem;
+        font-size: 1.4rem;
+        max-width: 100%;
         letter-spacing: 0.04rem;
+        @media screen and (min-width: $sm_breakpoint) {
+            font-size: 2.5rem;
+        }
         @media screen and (min-width: $md_breakpoint) {
+            font-size: 3rem;
+        }
+        @media screen and (min-width: $lg_breakpoint) {
             font-size: 4rem;
-            max-width: 50rem;
         }
     }
+}
+
+.bannerDotsWrap {
+    position: absolute;
+    left: 50%;
+    bottom: 1rem;
+    transform: translateX(-50%);
+    font-size: 0.7rem;
+    outline: none !important;
+    box-shadow: none !important;
+    display: flex;
+    justify-content: center;
+    h3 {
+        display: none;
+        font-family: "TT Norms Bold";
+        margin: 0;
+        margin-bottom: 0.5rem;
+        letter-spacing: 0.07rem;
+        text-transform: uppercase;
+        @media screen and (min-width: $md_breakpoint) {
+            display: block;
+        }
+    }
+
+    @media screen and (min-width: $md_breakpoint) {
+        bottom: 2rem;
+        font-size: 0.7rem;
+    }
+    @media screen and (min-width: $lg_breakpoint) {
+        font-size: 0.9rem;
+    }
+}
+.unclickedBannerDot {
+    border: none;
+    padding: 0 2rem;
+    border-bottom: 3px solid hsla(0, 0%, 100%, 0.6);
+    background: transparent;
+    h3 {
+        color: hsla(0, 0%, 100%, 0.6);
+    }
+}
+
+.clickedBannerDot {
+    border: none;
+    background: transparent;
+
+    padding: 0 2rem;
+    border-bottom: 3px solid $light-blue;
+    h3 {
+        color: white;
+    }
+}
+
+.bannerOfficialSiteButton {
+    cursor: pointer;
+    font-family: "TT Norms Bold";
+    letter-spacing: 0.05rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.5rem;
+    margin-top: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 1.5px solid white;
+    background-color: transparent;
+    color: white;
+    @media screen and (min-width: $sm_breakpoint) {
+        font-size: 1rem;
+        padding: 1rem 3rem;
+        font-size: 0.8rem;
+    }
+    @media screen and (min-width: $md_breakpoint) {
+        font-size: 1.2rem;
+        padding: 1rem 5em;
+    }
+
+    @media screen and (min-width: $lg_breakpoint) {
+        margin-top: 2rem;
+        font-size: 1.3rem;
+        padding: 1rem 7rem;
+    }
+}
+
+.bannerVideo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }

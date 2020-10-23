@@ -8,6 +8,8 @@ export interface MovieType {
     title: string;
     poster: string;
     movie_name_for_url: string;
+    banner_video: string;
+    banner_image: string;
 }
 
 export interface MovieInfoType {

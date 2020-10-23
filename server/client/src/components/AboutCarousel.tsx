@@ -131,6 +131,7 @@ const AboutCarousel: React.FC<{}> = () => {
                                             ],
                                         });
                                     }}
+                                    alt="about campus"
                                 ></img>
                             </div>
                         </LazyLoad>
@@ -148,7 +149,7 @@ const AboutCarousel: React.FC<{}> = () => {
                             <h1 className="aboutCarouselOverlayText">
                                 Iconic Feature Films
                             </h1>
-                            <img src={aboutFilms}></img>
+                            <img src={aboutFilms} alt="about films"></img>
                         </div>
                         <p className="aboutCarouselDescription">
                             Home to some of the world's most beloved franchises
@@ -166,7 +167,7 @@ const AboutCarousel: React.FC<{}> = () => {
                             <h1 className="aboutCarouselOverlayText">
                                 Innovative Technology
                             </h1>
-                            <img src={aboutTech}></img>
+                            <img src={aboutTech} alt="about tech"></img>
                         </div>
                         <p className="aboutCarouselDescription">
                             Developing for the future and innovating in the
