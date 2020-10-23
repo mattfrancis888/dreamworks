@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import annivMobile from "../img/annivMobile.jpg";
 import annivDesktop from "../img/annivDesktop.jpg";
 import { CarouselProvider, Slider, Slide, Dot } from "pure-react-carousel";
-import trollVid from "../videos/trollVid.mp4";
 import { connect } from "react-redux";
 import { StoreState } from "../reducers";
 import { MovieType, fetchMovies } from "../actions";
@@ -20,6 +19,8 @@ const Banner: React.FC<BannerProps> = (props) => {
     const [slide1IsClicked, setSlide1DotIsClicked] = useState(true);
     const [slide2IsClicked, setSlide2DotIsClicked] = useState(false);
     const [slide3IsClicked, setSlide3DotIsClicked] = useState(false);
+    const [slide4IsClicked, setSlide4DotIsClicked] = useState(false);
+    const [slide5IsClicked, setSlide5DotIsClicked] = useState(false);
     const { width } = useWindowDimensions();
     const history = useHistory();
 
@@ -27,7 +28,7 @@ const Banner: React.FC<BannerProps> = (props) => {
         props.fetchMovies();
     }, []);
 
-    const renderBannerVideoOrImg = (movieIndex: number) => {
+    const renderBannerVideoOrImg = (movieIndex: number): JSX.Element => {
         if (width > MED_SCREEN_SIZE) {
             return (
                 <video
@@ -64,6 +65,32 @@ const Banner: React.FC<BannerProps> = (props) => {
         }
     };
 
+    const renderMoviePreviewSlides = (): JSX.Element[] => {
+        return props.movies.map((movie, index) => {
+            return (
+                <Slide index={index} key={movie.title}>
+                    <div className="bannerOverlay"></div>
+                    <div className="bannerInfoWrap">
+                        <h1 className="bannerSubTitle">Available Now</h1>
+
+                        <h1 className="bannerTitle">{movie.title}</h1>
+                        <button
+                            className="bannerOfficialSiteButton"
+                            onClick={() =>
+                                history.push(
+                                    `movies/${movie.movie_name_for_url}`
+                                )
+                            }
+                        >
+                            Official Site
+                        </button>
+                    </div>
+                    {renderBannerVideoOrImg(index)}
+                </Slide>
+            );
+        });
+    };
+
     const renderCarousel = (): JSX.Element | JSX.Element[] => {
         if (props.movies.length === 0) return <div></div>;
         else
@@ -71,13 +98,14 @@ const Banner: React.FC<BannerProps> = (props) => {
                 <CarouselProvider
                     naturalSlideWidth={100}
                     naturalSlideHeight={45}
-                    totalSlides={4}
+                    totalSlides={5}
                     visibleSlides={1}
                     infinite={true}
                     className="bannerContainer"
                 >
                     <Slider>
-                        <Slide index={0}>
+                        {renderMoviePreviewSlides()}
+                        <Slide index={4}>
                             <div className="bannerOverlay"></div>
                             <div className="bannerInfoWrap">
                                 <h1 className="bannerSubTitle">
@@ -90,7 +118,7 @@ const Banner: React.FC<BannerProps> = (props) => {
                                     className="bannerOfficialSiteButton"
                                     onClick={() =>
                                         history.push(
-                                            `movies/${props.movies[0].movie_name_for_url}`
+                                            `movies/${props.movies[4].movie_name_for_url}`
                                         )
                                     }
                                 >
@@ -105,28 +133,6 @@ const Banner: React.FC<BannerProps> = (props) => {
                                 src={annivDesktop}
                             />
                         </Slide>
-                        <Slide index={1}>
-                            <div className="bannerOverlay"></div>
-                            <div className="bannerInfoWrap">
-                                <h1 className="bannerSubTitle">
-                                    Available Now
-                                </h1>
-                                <h1 className="bannerTitle">
-                                    {props.movies[1].title}
-                                </h1>
-                                <button
-                                    className="bannerOfficialSiteButton"
-                                    onClick={() =>
-                                        history.push(
-                                            `movies/${props.movies[1].movie_name_for_url}`
-                                        )
-                                    }
-                                >
-                                    Official Site
-                                </button>
-                            </div>
-                            {renderBannerVideoOrImg(1)}
-                        </Slide>
                     </Slider>
                     <div className="bannerDotsWrap">
                         <Dot
@@ -140,6 +146,8 @@ const Banner: React.FC<BannerProps> = (props) => {
                                 setSlide1DotIsClicked(true);
                                 setSlide2DotIsClicked(false);
                                 setSlide3DotIsClicked(false);
+                                setSlide4DotIsClicked(false);
+                                setSlide5DotIsClicked(false);
                             }}
                         >
                             <h3>{props.movies[0].title}</h3>
@@ -155,9 +163,62 @@ const Banner: React.FC<BannerProps> = (props) => {
                                 setSlide1DotIsClicked(false);
                                 setSlide2DotIsClicked(true);
                                 setSlide3DotIsClicked(false);
+                                setSlide4DotIsClicked(false);
+                                setSlide5DotIsClicked(false);
                             }}
                         >
                             <h3>{props.movies[1].title}</h3>
+                        </Dot>
+                        <Dot
+                            className={
+                                slide3IsClicked
+                                    ? "clickedBannerDot"
+                                    : "unclickedBannerDot"
+                            }
+                            slide={2}
+                            onClick={() => {
+                                setSlide1DotIsClicked(false);
+                                setSlide2DotIsClicked(false);
+                                setSlide3DotIsClicked(true);
+                                setSlide4DotIsClicked(false);
+                                setSlide5DotIsClicked(false);
+                            }}
+                        >
+                            <h3>{props.movies[2].title}</h3>
+                        </Dot>
+                        <Dot
+                            className={
+                                slide4IsClicked
+                                    ? "clickedBannerDot"
+                                    : "unclickedBannerDot"
+                            }
+                            slide={3}
+                            onClick={() => {
+                                setSlide1DotIsClicked(false);
+                                setSlide2DotIsClicked(false);
+                                setSlide3DotIsClicked(false);
+                                setSlide4DotIsClicked(true);
+                                setSlide5DotIsClicked(false);
+                            }}
+                        >
+                            <h3>{props.movies[3].title}</h3>
+                        </Dot>
+                        <Dot
+                            className={
+                                slide5IsClicked
+                                    ? "clickedBannerDot"
+                                    : "unclickedBannerDot"
+                            }
+                            slide={4}
+                            onClick={() => {
+                                setSlide1DotIsClicked(false);
+                                setSlide2DotIsClicked(false);
+                                setSlide3DotIsClicked(false);
+                                setSlide4DotIsClicked(false);
+                                setSlide5DotIsClicked(true);
+                            }}
+                        >
+                            <h3>Dreamworks Anniversary</h3>
                         </Dot>
                     </div>
                 </CarouselProvider>

@@ -141,12 +141,6 @@ const MovieInfo: React.FC<MovieInfoProps> = (props) => {
         }
     };
 
-    useEffect(() => {
-        window.addEventListener("resize", updateMedia);
-
-        //unmount lifecycle
-        return () => window.removeEventListener("resize", updateMedia);
-    });
     const renderContent = (): any => {
         if (props.movieInfo.length === 0) {
             return (

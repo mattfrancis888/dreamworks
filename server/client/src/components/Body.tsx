@@ -28,7 +28,6 @@ const Body: React.FC<{}> = () => {
     });
 
     useEffect(() => {
-        //Tecnically, we don't need Intersection observer; but I use it here just for demonstration purposes
         if (bodyMoviesTitleRef.inView) {
             anime({
                 targets: ".bodyMoviesTitle",

@@ -40,6 +40,7 @@
         }
     }
     .bannerTitle {
+        display: block;
         font-family: "TT Norms Bold", $fallback-fonts;
         margin: 0;
         text-transform: uppercase;
@@ -65,22 +66,29 @@
     bottom: 1rem;
     transform: translateX(-50%);
     font-size: 0.7rem;
+    outline: none !important;
+    box-shadow: none !important;
+    display: flex;
+    justify-content: center;
     h3 {
+        display: none;
         font-family: "TT Norms Bold";
         margin: 0;
         margin-bottom: 0.5rem;
         letter-spacing: 0.07rem;
         text-transform: uppercase;
+        @media screen and (min-width: $md_breakpoint) {
+            display: block;
+        }
     }
-    @media screen and (min-width: $sm_breakpoint) {
-        font-size: 1rem;
-    }
+
     @media screen and (min-width: $md_breakpoint) {
         bottom: 2rem;
-        font-size: 1.2rem;
+        font-size: 0.7rem;
     }
-    outline: none !important;
-    box-shadow: none !important;
+    @media screen and (min-width: $lg_breakpoint) {
+        font-size: 0.9rem;
+    }
 }
 .unclickedBannerDot {
     border: none;

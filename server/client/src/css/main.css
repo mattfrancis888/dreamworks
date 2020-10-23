@@ -437,6 +437,7 @@ nav .logo {
   }
 }
 .bannerInfoWrap .bannerTitle {
+  display: block;
   font-family: "TT Norms Bold", helvetica, arial, sans-serif;
   margin: 0;
   text-transform: uppercase;
@@ -469,23 +470,31 @@ nav .logo {
   font-size: 0.7rem;
   outline: none !important;
   box-shadow: none !important;
+  display: flex;
+  justify-content: center;
 }
 .bannerDotsWrap h3 {
+  display: none;
   font-family: "TT Norms Bold";
   margin: 0;
   margin-bottom: 0.5rem;
   letter-spacing: 0.07rem;
   text-transform: uppercase;
 }
-@media screen and (min-width: 520px) {
-  .bannerDotsWrap {
-    font-size: 1rem;
+@media screen and (min-width: 768px) {
+  .bannerDotsWrap h3 {
+    display: block;
   }
 }
 @media screen and (min-width: 768px) {
   .bannerDotsWrap {
     bottom: 2rem;
-    font-size: 1.2rem;
+    font-size: 0.7rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .bannerDotsWrap {
+    font-size: 0.9rem;
   }
 }
 
