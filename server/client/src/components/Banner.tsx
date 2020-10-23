@@ -2,16 +2,13 @@ import React, { useState, useEffect } from "react";
 import annivMobile from "../img/annivMobile.jpg";
 import annivDesktop from "../img/annivDesktop.jpg";
 import { CarouselProvider, Slider, Slide, Dot } from "pure-react-carousel";
-import { connect } from "react-redux";
-import { StoreState } from "../reducers";
-import { MovieType, fetchMovies } from "../actions";
 import { useHistory } from "react-router-dom";
 import useWindowDimensions from "./windowDimensions";
 import { MED_SCREEN_SIZE } from "../constants";
 import anime from "animejs/lib/anime.es.js";
+import { MovieType } from "../actions";
 
 interface BannerProps {
-    fetchMovies(): void;
     movies: MovieType[];
 }
 
@@ -23,10 +20,6 @@ const Banner: React.FC<BannerProps> = (props) => {
     const [slide5IsClicked, setSlide5DotIsClicked] = useState(false);
     const { width } = useWindowDimensions();
     const history = useHistory();
-
-    useEffect(() => {
-        props.fetchMovies();
-    }, []);
 
     const renderBannerVideoOrImg = (movieIndex: number): JSX.Element => {
         if (width > MED_SCREEN_SIZE) {
@@ -227,9 +220,4 @@ const Banner: React.FC<BannerProps> = (props) => {
 
     return <React.Fragment>{renderCarousel()}</React.Fragment>;
 };
-const mapStateToProps = (state: StoreState) => {
-    return {
-        movies: state.movies,
-    };
-};
-export default connect(mapStateToProps, { fetchMovies })(Banner);
+export default Banner;

@@ -5,10 +5,17 @@ import AboutCarousel from "./AboutCarousel";
 import trolls from "../img/trolls.jpg";
 import "pure-react-carousel/dist/react-carousel.es.css";
 import LazyLoad from "react-lazyload";
-import anime from "animejs/lib/anime.es.js";
 import { useInView } from "react-intersection-observer";
+import anime from "animejs/lib/anime.es.js";
+import { connect } from "react-redux";
+import { StoreState } from "../reducers";
+import { MovieType, fetchMovies } from "../actions";
 
-const Body: React.FC<{}> = () => {
+interface BodyProps {
+    fetchMovies(): void;
+    movies: MovieType[];
+}
+const Body: React.FC<BodyProps> = (props) => {
     //https://stackoverflow.com/questions/59953580/framer-check-if-element-is-into-viewport
 
     // const { ref, inView, entry } = useInView({
@@ -16,6 +23,10 @@ const Body: React.FC<{}> = () => {
     //     threshold: 0,
     //     triggerOnce: true,
     // });
+
+    useEffect(() => {
+        props.fetchMovies();
+    }, []);
 
     const bodyMoviesTitleRef = useInView({
         threshold: 0,
@@ -61,14 +72,14 @@ const Body: React.FC<{}> = () => {
     }, [bodyMoviesTitleRef.inView, thankYouTitleRef.inView]);
 
     return (
-        <React.Fragment>
-            <Banner />
+        <div data-testid="bodyContent">
+            <Banner movies={props.movies} />
 
             <h1 ref={bodyMoviesTitleRef.ref} className="bodyMoviesTitle">
                 Movies
             </h1>
 
-            <MoviesCarousel />
+            <MoviesCarousel movies={props.movies} />
             <AboutCarousel />
             <div className="thankYouContainer">
                 <div className="thankYouTextWrap" ref={thankYouTitleRef.ref}>
@@ -107,8 +118,14 @@ const Body: React.FC<{}> = () => {
                     </LazyLoad>
                 </div>
             </div>
-        </React.Fragment>
+        </div>
     );
 };
 
-export default Body;
+const mapStateToProps = (state: StoreState) => {
+    return {
+        movies: state.movies,
+    };
+};
+
+export default connect(mapStateToProps, { fetchMovies })(Body);
