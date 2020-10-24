@@ -32,6 +32,7 @@ const Banner: React.FC<BannerProps> = (props) => {
                     muted
                     playsInline
                     src={props.movies[movieIndex].banner_video}
+                    title={props.movies[movieIndex].title}
                 ></video>
             );
         } else {
