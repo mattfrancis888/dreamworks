@@ -196,7 +196,7 @@ const MoviesCarousel: React.FC<MoviesCarouselProps> = (props) => {
         }
     };
 
-    return <React.Fragment>{renderCarousel()}</React.Fragment>;
+    return <div data-testid="movieCarousel">{renderCarousel()}</div>;
 };
 
 export default MoviesCarousel;

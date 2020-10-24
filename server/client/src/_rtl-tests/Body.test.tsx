@@ -34,55 +34,71 @@ beforeEach(async () => {
     );
 });
 
-test("Shows <Body> at path / - Using MemoryRouter ", () => {
-    expect(app.getByTestId("bodyContent")).toBeInTheDocument();
+describe("Sections that appear in homepage (with path '/' ) ", () => {
+    test("Shows <Header>", () => {
+        expect(app.getByAltText("header dreamworks logo")).toBeInTheDocument();
+    });
+
+    test("Shows <Banner> ", () => {
+        expect(app.getByTestId("homeBannerCarousel")).toBeInTheDocument();
+    });
+
+    test("Shows <Body> ", () => {
+        expect(app.getByTestId("bodyContent")).toBeInTheDocument();
+    });
+
+    test("Shows <MovieCarousel> ", () => {
+        expect(app.getByTestId("movieCarousel")).toBeInTheDocument();
+    });
+
+    test("Shows '<AboutCarousel>' ", () => {
+        expect(app.getByTestId("aboutCarousel")).toBeInTheDocument();
+    });
+
+    test("Shows 'thank you section'", () => {
+        expect(
+            app.getByText("Thanks for checking us out!")
+        ).toBeInTheDocument();
+    });
+
+    test("Shows <Footer>", () => {
+        expect(app.getByAltText("dreamworks footer logo")).toBeInTheDocument();
+    });
 });
 
-test("Load banner and movie carousel with data from the database", async () => {
+test("Load <Banner> and <MovieCarousel> with movies data from the database", async () => {
     const mockData = [
         {
             id: 1,
             title: "Trolls: World Tour",
-            poster:
-                "https://res.cloudinary.com/du8n2aa4p/image/upload/v1602728368/dreamworks/trollsPoster.jpg",
+            poster: "POSTER_LINK",
             movie_name_for_url: "trolls-wold-tour",
-            banner_image:
-                "https://res.cloudinary.com/du8n2aa4p/image/upload/v1602787310/dreamworks/trollsBannerMobile.jpg",
-            banner_video:
-                "https://res.cloudinary.com/du8n2aa4p/video/upload/v1602787142/dreamworks/trollsBannerVid.mp4",
+            banner_image: "BANNER_IMAGE_LINK",
+            banner_video: "BANNER_VIDEO.mp4",
         },
         {
             id: 3,
             title: "The Croods: A New Age",
-            poster:
-                "https://res.cloudinary.com/du8n2aa4p/image/upload/v1602728368/dreamworks/theCroodsPoster.jpg",
+            poster: "POSTER_LINK",
             movie_name_for_url: "croods-2",
-            banner_image:
-                "https://res.cloudinary.com/du8n2aa4p/image/upload/v1602806244/dreamworks/theCroodsBannerMobile.jpg",
-            banner_video:
-                "https://res.cloudinary.com/du8n2aa4p/video/upload/v1602806238/dreamworks/theCroodsBannerVid.mov",
+            banner_image: "BANNER_IMAGE_LINK",
+            banner_video: "BANNER_VIDEO.mp4",
         },
         {
             id: 4,
             title: "Abominable",
-            poster:
-                "https://res.cloudinary.com/du8n2aa4p/image/upload/v1602728368/dreamworks/abominablePoster.jpg",
+            poster: "POSTER_LINK",
             movie_name_for_url: "abominable",
-            banner_image:
-                "https://res.cloudinary.com/du8n2aa4p/image/upload/v1602807946/dreamworks/abominableBannerMobile.jpg",
-            banner_video:
-                "https://res.cloudinary.com/du8n2aa4p/video/upload/v1602807023/dreamworks/abominableBannerVid.mp4",
+            banner_image: "BANNER_IMAGE_LINK",
+            banner_video: "BANNER_VIDEO.mp4",
         },
         {
             id: 5,
             title: "How to Train Your Dragon: The Hidden World",
-            poster:
-                "https://res.cloudinary.com/du8n2aa4p/image/upload/v1602728663/dreamworks/httydPoster.jpg",
+            poster: "POSTER_LINK",
             movie_name_for_url: "how-to-train-your-dragon-the-hidden-world",
-            banner_image:
-                "https://res.cloudinary.com/du8n2aa4p/image/upload/v1602809305/dreamworks/httydAboutMobile.jpg",
-            banner_video:
-                "https://res.cloudinary.com/du8n2aa4p/video/upload/v1602808555/dreamworks/httydBannerVid.mp4",
+            banner_image: "BANNER_IMAGE_LINK",
+            banner_video: "BANNER_VIDEO.mp4",
         },
     ];
 
@@ -96,8 +112,6 @@ test("Load banner and movie carousel with data from the database", async () => {
         }
         expect(scope.isDone()).toBe(true);
 
-        expect(app.getAllByText("Trolls: World Tour").length).toEqual(
-            mockData.length + 1
-        );
+        expect(app.getAllByText("Trolls: World Tour").length).toEqual(2);
     });
 }, 30000);

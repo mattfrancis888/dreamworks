@@ -98,6 +98,7 @@ const Body: React.FC<BodyProps> = (props) => {
                     >
                         <img
                             className="thankYouImage"
+                            alt="thank you image"
                             src={trolls}
                             onLoad={() => {
                                 anime({

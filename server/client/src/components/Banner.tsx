@@ -59,7 +59,7 @@ const Banner: React.FC<BannerProps> = (props) => {
     };
 
     const renderMoviePreviewSlides = (): JSX.Element[] => {
-        return props.movies.map((movie, index) => {
+        return props.movies.slice(0, 4).map((movie, index) => {
             return (
                 <Slide index={index} key={movie.title}>
                     <div className="bannerOverlay"></div>
@@ -218,6 +218,6 @@ const Banner: React.FC<BannerProps> = (props) => {
             );
     };
 
-    return <React.Fragment>{renderCarousel()}</React.Fragment>;
+    return <div data-testid="homeBannerCarousel">{renderCarousel()}</div>;
 };
 export default Banner;

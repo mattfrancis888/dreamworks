@@ -7,7 +7,11 @@ const Header: React.FC<{}> = () => {
     return (
         <nav>
             <Link to="/">
-                <img className="logo" alt="dreamworks logo" src={dreamworks} />
+                <img
+                    className="logo"
+                    alt="header dreamworks logo"
+                    src={dreamworks}
+                />
             </Link>
         </nav>
     );
