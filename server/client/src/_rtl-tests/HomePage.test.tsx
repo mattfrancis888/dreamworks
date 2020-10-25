@@ -39,7 +39,7 @@ beforeEach(async () => {
     );
 });
 
-describe("Sections that appear in homepage (with path '/' ) ", () => {
+describe("Sections that automatically appear in homepage (with path '/' ) ", () => {
     test("Shows <Header>", () => {
         expect(app.getByAltText("header dreamworks logo")).toBeInTheDocument();
     });
@@ -71,7 +71,7 @@ describe("Sections that appear in homepage (with path '/' ) ", () => {
     });
 });
 
-describe("Slider functionality ", async () => {
+describe("Slider functionality ", () => {
     let scope: nock.Scope;
     let mockData: any;
     beforeEach(() => {
