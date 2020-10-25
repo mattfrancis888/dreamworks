@@ -11,23 +11,17 @@ import { RiArrowRightSLine, RiArrowLeftSLine } from "react-icons/ri";
 import { IconContext } from "react-icons";
 import LazyLoad from "react-lazyload";
 import anime from "animejs/lib/anime.es.js";
-import { MovieType, fetchMovies } from "../actions";
-import { connect } from "react-redux";
-import { StoreState } from "../reducers";
+import { MovieType } from "../actions";
 import Loading from "./Loading";
 import { useHistory } from "react-router-dom";
 
 interface MoviesCarouselProps {
-    fetchMovies(): void;
     movies: MovieType[];
 }
 
 const MoviesCarousel: React.FC<MoviesCarouselProps> = (props) => {
     const history = useHistory();
 
-    useEffect(() => {
-        props.fetchMovies();
-    }, []);
     const renderCarousel = (): JSX.Element | JSX.Element[] => {
         if (props.movies.length === 0)
             return (
@@ -202,12 +196,7 @@ const MoviesCarousel: React.FC<MoviesCarouselProps> = (props) => {
         }
     };
 
-    return <React.Fragment>{renderCarousel()}</React.Fragment>;
+    return <div data-testid="movieCarousel">{renderCarousel()}</div>;
 };
 
-const mapStateToProps = (state: StoreState) => {
-    return {
-        movies: state.movies,
-    };
-};
-export default connect(mapStateToProps, { fetchMovies })(MoviesCarousel);
+export default MoviesCarousel;

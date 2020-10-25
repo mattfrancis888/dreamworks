@@ -2,16 +2,13 @@ import React, { useState, useEffect } from "react";
 import annivMobile from "../img/annivMobile.jpg";
 import annivDesktop from "../img/annivDesktop.jpg";
 import { CarouselProvider, Slider, Slide, Dot } from "pure-react-carousel";
-import { connect } from "react-redux";
-import { StoreState } from "../reducers";
-import { MovieType, fetchMovies } from "../actions";
 import { useHistory } from "react-router-dom";
 import useWindowDimensions from "./windowDimensions";
 import { MED_SCREEN_SIZE } from "../constants";
 import anime from "animejs/lib/anime.es.js";
+import { MovieType } from "../actions";
 
 interface BannerProps {
-    fetchMovies(): void;
     movies: MovieType[];
 }
 
@@ -24,10 +21,6 @@ const Banner: React.FC<BannerProps> = (props) => {
     const { width } = useWindowDimensions();
     const history = useHistory();
 
-    useEffect(() => {
-        props.fetchMovies();
-    }, []);
-
     const renderBannerVideoOrImg = (movieIndex: number): JSX.Element => {
         if (width > MED_SCREEN_SIZE) {
             return (
@@ -39,6 +32,7 @@ const Banner: React.FC<BannerProps> = (props) => {
                     muted
                     playsInline
                     src={props.movies[movieIndex].banner_video}
+                    title={props.movies[movieIndex].title}
                 ></video>
             );
         } else {
@@ -66,7 +60,7 @@ const Banner: React.FC<BannerProps> = (props) => {
     };
 
     const renderMoviePreviewSlides = (): JSX.Element[] => {
-        return props.movies.map((movie, index) => {
+        return props.movies.slice(0, 4).map((movie, index) => {
             return (
                 <Slide index={index} key={movie.title}>
                     <div className="bannerOverlay"></div>
@@ -225,11 +219,6 @@ const Banner: React.FC<BannerProps> = (props) => {
             );
     };
 
-    return <React.Fragment>{renderCarousel()}</React.Fragment>;
+    return <div data-testid="homeBannerCarousel">{renderCarousel()}</div>;
 };
-const mapStateToProps = (state: StoreState) => {
-    return {
-        movies: state.movies,
-    };
-};
-export default connect(mapStateToProps, { fetchMovies })(Banner);
+export default Banner;

@@ -35,6 +35,7 @@ const MovieInfo: React.FC<MovieInfoProps> = (props) => {
                     loop
                     muted
                     playsInline
+                    title="movie info banner video"
                     src={props.movieInfo[0].banner_video}
                 ></video>
             );
@@ -43,6 +44,7 @@ const MovieInfo: React.FC<MovieInfoProps> = (props) => {
                 <img
                     className="movieInfoBannerImageMobile"
                     src={props.movieInfo[0].banner_image}
+                    alt="movie info banner image"
                     onLoad={() => {
                         anime({
                             targets: ".movieInfoBannerImageMobile",
@@ -56,7 +58,6 @@ const MovieInfo: React.FC<MovieInfoProps> = (props) => {
                             ],
                         });
                     }}
-                    alt="movie scene"
                 />
             );
         }
@@ -77,6 +78,7 @@ const MovieInfo: React.FC<MovieInfoProps> = (props) => {
                     <div className="movieInfoAboutImageContainer">
                         <img
                             className="movieInfoAboutImageDesktop"
+                            alt="about image desktop"
                             src={props.movieInfo[0].about_image_desktop}
                             onLoad={() => {
                                 anime({
@@ -91,7 +93,6 @@ const MovieInfo: React.FC<MovieInfoProps> = (props) => {
                                     ],
                                 });
                             }}
-                            alt="about movie"
                         ></img>
                     </div>
                 </React.Fragment>
@@ -103,6 +104,7 @@ const MovieInfo: React.FC<MovieInfoProps> = (props) => {
                     <div className="movieInfoAboutImageContainer">
                         <img
                             className="movieInfoAboutImageMobile"
+                            alt="about image mobile"
                             src={props.movieInfo[0].about_image_mobile}
                             onLoad={() => {
                                 anime({
@@ -117,7 +119,6 @@ const MovieInfo: React.FC<MovieInfoProps> = (props) => {
                                     ],
                                 });
                             }}
-                            alt="about movie"
                         ></img>
                     </div>
                     <div className={readMore ? "" : "aboutMovieMobileDescWrap"}>
@@ -151,12 +152,16 @@ const MovieInfo: React.FC<MovieInfoProps> = (props) => {
         } else {
             return (
                 <div className="movieInfoContainer">
-                    <div className="movieInfoBanner">
+                    <div
+                        data-testid="movieInfoBanner"
+                        className="movieInfoBanner"
+                    >
                         <div className="movieInfoBannerOverlay">
                             {renderBannerVideoOrImg()}
                         </div>
 
                         <img
+                            data-testid="movieInfoLogo"
                             className="movieInfoLogo"
                             src={props.movieInfo[0].logo}
                             onLoad={() => {
@@ -175,7 +180,12 @@ const MovieInfo: React.FC<MovieInfoProps> = (props) => {
                             alt="logo for movie"
                         />
                     </div>
-                    <div className="movieInfoAbout">{renderAbout()}</div>
+                    <div
+                        data-testid="movieInfoAbout"
+                        className="movieInfoAbout"
+                    >
+                        {renderAbout()}
+                    </div>
                     <iframe
                         className="movieTrailer"
                         src={props.movieInfo[0].trailer}
