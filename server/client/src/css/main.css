@@ -1,0 +1,1221 @@
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  /*If default font-size is 16px; 1 rem = 10 px*/
+  box-sizing: inherit;
+}
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+  margin-top: 5rem;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+main {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+  background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+img {
+  border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type=number]::-webkit-inner-spin-button, [type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type=search] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10+.
+ */
+template,
+[hidden] {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+html {
+  /*If default font-size is 16px; 1 rem = 10 px*/
+  font-size: 62.5%;
+}
+
+body {
+  /*Make default font-size bigger. If default font-size is 16px; 1.6 rem = 16 px*/
+  font: 1.1rem "TT Norms", helvetica, arial, sans-serif;
+}
+
+@font-face {
+  font-family: "Bemio";
+  src: url(../fonts/Bemio.otf) format("opentype");
+}
+@font-face {
+  font-family: "TT Norms";
+  src: url(../fonts/TTNorms-Regular.otf) format("opentype");
+}
+@font-face {
+  font-family: "TT Norms Bold";
+  src: url(../fonts/TTNorms-Bold.otf) format("opentype");
+}
+nav {
+  z-index: 2;
+  width: 100%;
+  background-color: white;
+  padding: 0.5rem 2rem;
+}
+nav .logo {
+  width: 17rem;
+}
+@media screen and (min-width: 768px) {
+  nav .logo {
+    width: 20rem;
+  }
+}
+
+.bannerContainer {
+  position: relative;
+  color: white;
+  overflow: hidden;
+}
+.bannerContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bannerOverlay {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.bannerInfoWrap {
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .bannerInfoWrap {
+    left: 4rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .bannerInfoWrap {
+    left: 8rem;
+  }
+}
+.bannerInfoWrap .bannerSubTitle {
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 200;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.04rem;
+}
+@media screen and (min-width: 768px) {
+  .bannerInfoWrap .bannerSubTitle {
+    margin-bottom: 1.7rem;
+    font-size: 1.6rem;
+  }
+}
+.bannerInfoWrap .bannerTitle {
+  display: block;
+  font-family: "TT Norms Bold", helvetica, arial, sans-serif;
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.4rem;
+  max-width: 100%;
+  letter-spacing: 0.04rem;
+}
+@media screen and (min-width: 520px) {
+  .bannerInfoWrap .bannerTitle {
+    font-size: 2.5rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .bannerInfoWrap .bannerTitle {
+    font-size: 3rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .bannerInfoWrap .bannerTitle {
+    font-size: 4rem;
+  }
+}
+
+.bannerDotsWrap {
+  position: absolute;
+  left: 50%;
+  bottom: 1rem;
+  transform: translateX(-50%);
+  font-size: 0.7rem;
+  outline: none !important;
+  box-shadow: none !important;
+  display: flex;
+  justify-content: center;
+}
+.bannerDotsWrap h3 {
+  display: none;
+  font-family: "TT Norms Bold";
+  margin: 0;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.07rem;
+  text-transform: uppercase;
+}
+@media screen and (min-width: 768px) {
+  .bannerDotsWrap h3 {
+    display: block;
+  }
+}
+@media screen and (min-width: 768px) {
+  .bannerDotsWrap {
+    bottom: 2rem;
+    font-size: 0.7rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .bannerDotsWrap {
+    font-size: 0.9rem;
+  }
+}
+
+.unclickedBannerDot {
+  border: none;
+  padding: 0 2rem;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.6);
+  background: transparent;
+}
+.unclickedBannerDot h3 {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.clickedBannerDot {
+  border: none;
+  background: transparent;
+  padding: 0 2rem;
+  border-bottom: 3px solid #055ebb;
+}
+.clickedBannerDot h3 {
+  color: white;
+}
+
+.bannerOfficialSiteButton {
+  cursor: pointer;
+  font-family: "TT Norms Bold";
+  letter-spacing: 0.05rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.5rem;
+  margin-top: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: 1.5px solid white;
+  background-color: transparent;
+  color: white;
+}
+@media screen and (min-width: 520px) {
+  .bannerOfficialSiteButton {
+    font-size: 1rem;
+    padding: 1rem 3rem;
+    font-size: 0.8rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .bannerOfficialSiteButton {
+    font-size: 1.2rem;
+    padding: 1rem 5em;
+  }
+}
+@media screen and (min-width: 992px) {
+  .bannerOfficialSiteButton {
+    margin-top: 2rem;
+    font-size: 1.3rem;
+    padding: 1rem 7rem;
+  }
+}
+
+.bannerVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.loadingCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 2rem;
+}
+.loadingCenter > div {
+  width: 10rem;
+  height: 10rem;
+}
+@media screen and (min-width: 520px) {
+  .loadingCenter > div {
+    width: 12rem;
+    height: 12rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .loadingCenter > div {
+    width: 16rem;
+    height: 16rem;
+    padding-bottom: 5rem;
+  }
+}
+
+.loadingFillViewport {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+}
+
+.moviesCarouselWrap {
+  padding: 0 3rem;
+  margin-bottom: 5rem;
+}
+@media screen and (min-width: 768px) {
+  .moviesCarouselWrap {
+    padding: 0 5rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .moviesCarouselWrap {
+    padding: 0 7rem;
+  }
+}
+.moviesCarouselWrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sliderAndButtonWrap {
+  position: relative;
+}
+
+.moviesNextButton {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  border-radius: 100%;
+  font-size: 3rem;
+  color: #055ebb;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border: none;
+  background-color: white;
+  position: absolute;
+  right: -2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  outline: none !important;
+}
+@media screen and (min-width: 768px) {
+  .moviesNextButton {
+    font-size: 4rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .moviesNextButton {
+    font-size: 5rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .moviesNextButton {
+    right: -3rem;
+  }
+}
+
+.moviesBackButton {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  border-radius: 100%;
+  font-size: 3rem;
+  color: #055ebb;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border: none;
+  background-color: white;
+  position: absolute;
+  left: -2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  outline: none !important;
+}
+@media screen and (min-width: 768px) {
+  .moviesBackButton {
+    font-size: 4rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .moviesBackButton {
+    font-size: 5rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .moviesBackButton {
+    left: -3rem;
+  }
+}
+
+.movieContainerCarousel {
+  position: relative;
+  opacity: 0;
+}
+
+.moviePosterTitleFade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.75) 0, transparent 34%);
+}
+
+.moviePosterTitle {
+  font-family: "TT Norms Bold";
+  letter-spacing: 0.04rem;
+  z-index: 1;
+  position: absolute;
+  color: white;
+  text-transform: uppercase;
+  bottom: 1rem;
+  left: 1rem;
+  font-size: 0.6rem;
+  padding-right: 1rem;
+}
+@media screen and (min-width: 520px) {
+  .moviePosterTitle {
+    bottom: 2rem;
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .moviePosterTitle {
+    font-size: 1.4rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .moviePosterTitle {
+    font-size: 2rem;
+  }
+}
+
+.movieOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.movieOverlay h3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  filter: none;
+}
+@media screen and (min-width: 520px) {
+  .movieOverlay h3 {
+    font-size: 1.3rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .movieOverlay h3 {
+    font-size: 1.6rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .movieOverlay h3 {
+    font-size: 2rem;
+  }
+}
+.movieOverlay:hover {
+  opacity: 1;
+}
+
+.aboutCarousel {
+  background-color: #052c6f;
+  padding: 4rem 0;
+  max-height: 48rem;
+  overflow: hidden;
+}
+@media screen and (min-width: 520px) {
+  .aboutCarousel {
+    max-height: 54rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .aboutCarousel {
+    max-height: 64rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .aboutCarousel {
+    max-height: 74rem;
+  }
+}
+
+.aboutCarouselTitle {
+  font-family: "TT Norms Bold";
+  color: white;
+  font-size: 2.2rem;
+  opacity: 0;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+}
+@media screen and (min-width: 520px) {
+  .aboutCarouselTitle {
+    font-size: 4rem;
+  }
+}
+
+.aboutTitleAndDotsWrap {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.aboutCarouselDotsWrap {
+  display: flex;
+  justify-content: center;
+}
+
+.aboutCarouselDot {
+  background-color: #052c6f;
+  border: none;
+  padding: 0 2rem;
+  border-bottom: 3px solid #055ebb;
+  outline: none !important;
+  box-shadow: none !important;
+}
+.aboutCarouselDot h3 {
+  color: white;
+}
+
+.aboutCarouselDotClicked {
+  background-color: #052c6f;
+  border: none;
+  padding: 0 2rem;
+  border-bottom: 3px solid #4c8dff;
+}
+.aboutCarouselDotClicked h3 {
+  color: #4c8dff;
+}
+
+.aboutCarouselImageContainer {
+  position: relative;
+  width: 100%;
+  height: 20rem;
+  opacity: 0;
+}
+@media screen and (min-width: 768px) {
+  .aboutCarouselImageContainer {
+    height: 30rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .aboutCarouselImageContainer {
+    height: 40rem;
+  }
+}
+.aboutCarouselImageContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.aboutCarouselSlide {
+  margin: 0 auto;
+  text-align: center;
+  width: 30rem;
+  color: white;
+}
+@media screen and (min-width: 520px) {
+  .aboutCarouselSlide {
+    width: 45rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .aboutCarouselSlide {
+    width: 60rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .aboutCarouselSlide {
+    width: 70rem;
+  }
+}
+
+.aboutCarouselOverlay {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.aboutCarouselOverlayText {
+  color: white;
+  font-family: "TT Norms Bold";
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-transform: uppercase;
+}
+
+.aboutCarouselDescription {
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  font-size: 1.2rem;
+}
+@media screen and (min-width: 520px) {
+  .aboutCarouselDescription {
+    font-size: 1.6rem;
+    line-height: 2.3rem;
+  }
+}
+
+.bodyMoviesTitle {
+  font-family: "TT Norms Bold";
+  text-transform: uppercase;
+  letter-spacing: 0.03rem;
+  color: #052c6f;
+  text-align: center;
+  margin-top: 4rem;
+  font-size: 3rem;
+  opacity: 0;
+}
+@media screen and (min-width: 768px) {
+  .bodyMoviesTitle {
+    font-size: 4rem;
+  }
+}
+
+.thankYouContainer {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+}
+
+.thankYouTextWrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 3rem;
+  opacity: 0;
+}
+@media screen and (min-width: 992px) {
+  .thankYouTextWrap {
+    width: 40%;
+  }
+}
+.thankYouTextWrap h1 {
+  font-family: "TT Norms Bold";
+  text-align: center;
+  text-transform: uppercase;
+  color: #052c6f;
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+.thankYouTextWrap p {
+  text-align: center;
+  color: #052c6f;
+  font-size: 1.7rem;
+  margin: 0;
+}
+
+.thankYouImageWrap {
+  width: 100%;
+  padding: 0 0.5rem;
+}
+@media screen and (min-width: 520px) {
+  .thankYouImageWrap {
+    padding: 0 3rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .thankYouImageWrap {
+    padding: 0 13rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .thankYouImageWrap {
+    padding: 0 4rem;
+    width: 60%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .thankYouImageWrap {
+    padding: 0 13rem;
+    width: 60%;
+  }
+}
+.thankYouImageWrap img {
+  width: 100%;
+  object-fit: cover;
+  opacity: 0;
+}
+
+.movieInfoContainer {
+  background-color: #041939;
+}
+
+.movieInfoBanner {
+  position: relative;
+  height: 60rem;
+  overflow: hidden;
+}
+.movieInfoBanner .movieInfoBannerImageMobile {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.movieInfoBanner .movieInfoBannerVideo {
+  width: 100%;
+  height: 100%;
+  background-color: #041939;
+  object-fit: cover;
+}
+@media screen and (min-width: 768px) {
+  .movieInfoBanner {
+    height: 65rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .movieInfoBanner {
+    height: 70rem;
+  }
+}
+
+.movieInfoBannerOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.movieInfoLogo {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+}
+@media screen and (min-width: 520px) {
+  .movieInfoLogo {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .movieInfoLogo {
+    width: 40%;
+  }
+}
+@media screen and (min-width: 992px) {
+  .movieInfoLogo {
+    width: 35%;
+  }
+}
+.movieInfoLogo img {
+  width: 100%;
+  height: 100%;
+}
+
+.movieInfoAbout {
+  padding: 7rem 0 4rem 0;
+  background-color: #041939;
+  color: white;
+  margin-bottom: 5rem;
+}
+@media screen and (min-width: 520px) {
+  .movieInfoAbout {
+    padding-top: 9rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .movieInfoAbout {
+    display: flex;
+    margin-bottom: 10rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .movieInfoAbout {
+    margin-bottom: 18rem;
+  }
+}
+
+.aboutMovieTitle {
+  font-family: "Bemio", helvetica, arial, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+}
+@media screen and (min-width: 520px) {
+  .aboutMovieTitle {
+    margin-bottom: 5rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .aboutMovieTitle {
+    text-align: left;
+    margin-bottom: 2rem;
+  }
+}
+
+.movieInfoAboutTextWrap {
+  padding: 0 3rem;
+}
+@media screen and (min-width: 768px) {
+  .movieInfoAboutTextWrap {
+    width: 50%;
+    padding: 0 4rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .movieInfoAboutTextWrap {
+    padding: 0 8rem;
+  }
+}
+
+.movieInfoAboutImageContainer {
+  position: relative;
+}
+.movieInfoAboutImageContainer .movieInfoAboutImageDesktop,
+.movieInfoAboutImageContainer .movieInfoAboutImageMobile {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media screen and (min-width: 768px) {
+  .movieInfoAboutImageContainer {
+    width: 50%;
+  }
+}
+
+.aboutMovieMobileDescWrap {
+  position: relative;
+  max-height: 12rem;
+  overflow: hidden;
+}
+.aboutMovieMobileDescWrap .readMoreFade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  z-index: 1;
+  background: linear-gradient(0deg, #041939 0, rgba(4, 25, 57, 0));
+}
+
+.aboutMovieDesc {
+  white-space: pre-line;
+  padding: 1rem 2rem;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  margin: 0;
+}
+@media screen and (min-width: 768px) {
+  .aboutMovieDesc {
+    padding: 0;
+    font-size: 1.5rem;
+    line-height: 2.3rem;
+  }
+}
+
+.aboutMovieReadMoreButton {
+  margin-top: 4rem;
+  margin-left: 2rem;
+  text-transform: uppercase;
+  padding: 1rem 5rem;
+  border: 1px solid white;
+  color: white;
+  background-color: transparent;
+  font-weight: 700;
+  outline: none !important;
+}
+
+.aboutMovieReadMoreButtonHide {
+  display: none;
+}
+
+.movieTrailer {
+  width: 100%;
+  height: 33rem;
+  margin-bottom: 10rem;
+}
+@media screen and (min-width: 520px) {
+  .movieTrailer {
+    height: 37rem;
+    margin-bottom: 17rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .movieTrailer {
+    height: 43rem;
+    margin-bottom: 20rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .movieTrailer {
+    height: 53rem;
+    margin-bottom: 30rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .movieTrailer {
+    height: 67rem;
+  }
+}
+
+footer {
+  background-color: #052c6f;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+footer .footerLogo {
+  width: 16rem;
+}
+@media screen and (min-width: 992px) {
+  footer {
+    padding: 5rem;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
