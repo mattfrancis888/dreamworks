@@ -1,68 +1,82 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Dreamworks
 
-## Available Scripts
+Shows Dreamwork movies and their information. Data is stored on PostgreSQL. Developed with React, Redux, Express, Typescript, Jest, React-Testing-Library, JS, HTML, CSS.
 
-In the project directory, you can run:
+# Why I Built It And What I've Learned:
 
-### `npm start`
+-   To understand the applications and usage of RDBMS.
+-   Concepts in a RDBMS (eg; Relationships, Constraints, Queries, etc )
+-   How PostgreSQL and the front-end can be integrated.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## PostgreSQL:
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Concepts that were used when building the project:
 
-### `npm test`
+-   Basic SQL Queries (eg; Select, Aggregate functions, etc), Sub Queries.
+-   Database Design and Normalization.
+-   Foreign Keys, Primary Keys.
+-   JOINS.
+-   Views.
+-   ACID Transactions for DML (Data Manipulation Language) queries.
+-   Backup and Recovery (i.e pg_dump and pg_restore).
+-   Roles.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Concepts that were INTRODUCED but not applied in the project:
 
-### `npm run build`
+-   Indexing for better performance/speed.
+-   Composites to create a custom data type.
+-   Sequences to generate a sequence of integers; used commonly with the attributes of a table.
+-   SQL Functions (Cannot change database via DML; must return a value).
+-   Stored Procedures (Can change database; does NOT have to return value).
+-   Triggers are functions that are invoked automatically after a certain event occurs (eg; After an insert, delete statement, etc).
+-   Conditional statements that are used in a query (CASE WHEN, COALESCE, NULLIF).
+-   CTE (Common Table Expression) queries to create a temporary table so that the table can be referenced with another query statement.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## React:
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+-   Used Lazy Loading
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Note On Production Site:
 
-### `npm run eject`
+-   In this project, our hosting site (Vercel) needs CORS (Cross-origin resource sharing) enabled for the API to be accessed. Thus, other sources could use the API; which isn't ideal for the API's security/privacy.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## External Resources:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+-   pgAdmin 4 for PostgreSQL GUI.
+-   Postman to test API requests.
+-   Prettier to format code and EsLint for linting.
+-   Redux dev tool google chrome extension to check the values of the states.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## What It Looks Like
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<img src="readmeImg/homepage.gif" height="350"/>
+<img src="readmeImg/homepageBannerSmall.png" height="350"/>
+<img src="readmeImg/moviesCarousel.png" height="350"/>
+<img src="readmeImg/aboutCarousel.png" height="350"/>
+<img src="readmeImg/thanks.png" height="350"/>
+<img src="readmeImg/movieInfoBanner.gif" height="350"/>
+<img src="readmeImg/movieInfoBannerSmall.png" height="350"/>
+<img src="readmeImg/movieInfoAboutLarge.jpg" height="350"/>
+<img src="readmeImg/movieInfoAboutSmall.png" height="350"/>
+<img src="readmeImg/movieInfoTrailer.png" height="350"/>
+<img src="readmeImg/thanks.png" height="350"/>
 
-## Learn More
+# Getting Started
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Clone the project. Use `npm install` to install all the dependencies. Go to the client directory, run the project with `npm start` for development or `npm run build` for production.
 
-### Code Splitting
+2. OPTIONAL: If you want to make changes locally, on the terminal, go to the `backend` directory. Type `npm run convert` to start the local server. The command would also listen to changes and convert the Express Typescript files to Express Javascript files that will be used for production. Create your own local database by restoring the pg_dump file of the dreamworks database given (called 'dreamworks_backup' in root directory). Configure your own Pool settings in databasePool.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+# Prerequisites
 
-### Analyzing the Bundle Size
+What things you need to install the software
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+```
+- Any package manager (npm, yarn)
+```
 
-### Making a Progressive Web App
+# Versioning
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+None
