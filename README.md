@@ -36,10 +36,6 @@ Shows Dreamwork movies and their information. Data is stored on PostgreSQL. Deve
 
 -   Used Lazy Loading
 
-## Note On Production Site:
-
--   In this project, our hosting site (Vercel) needs CORS (Cross-origin resource sharing) enabled for the API to be accessed. Thus, other sources could use the API; which isn't ideal for the API's security/privacy.
-
 ## External Resources:
 
 -   pgAdmin 4 for PostgreSQL GUI.
